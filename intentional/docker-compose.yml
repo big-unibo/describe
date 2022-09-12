@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+
+  # Image of the MySQL database
+  mysql:
+    image: mysql:8.0
+    hostname: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PWD}
+    expose:
+      - ${MYSQL_PORT}
+    ports:
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      timeout: 5s
+      retries: 10
+    networks:
+      - default
+
+  # Populate the MySQL database when the database is ready (i.e., is healthy)
+  mysql-seed:
+    hostname: mysql-seed
+    container_name: mysql-seed
+    image: mysql:8.0
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ./resources/:/data
+    command: /bin/bash -c "mysql --max_allowed_packet=1000M -hmysql -u${MYSQL_USER} -p${MYSQL_PWD} < /data/foodmart-mysql.sql; mysql --max_allowed_packet=1000M -hmysql -u${MYSQL_USER} -p${MYSQL_PWD} < /data/covid_weekly-mysql.sql; mysql --max_allowed_packet=1000M -hmysql -u${MYSQL_USER} -p${MYSQL_PWD} < /data/ssb_test-mysql.sql"
+    networks:
+      - default

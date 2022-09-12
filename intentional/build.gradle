@@ -1,0 +1,102 @@
+plugins {
+    id 'java-library'
+    id 'war'
+    id 'antlr'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+}
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    // ANTLR 4
+    antlr "org.antlr:antlr4:4.8-1"
+    implementation 'org.antlr:antlr4:4.5'
+    // servlet
+    implementation 'javax:javaee-api:8.0.1'
+    implementation 'io.ktor:ktor-server-servlet:1.4.3'
+    // kotlin
+    implementation 'de.mpicbg.scicomp:krangl:0.15'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    // java
+    implementation 'mysql:mysql-connector-java:8.0.21'
+    implementation 'org.apache.commons:commons-csv:1.8'
+    // implementation 'net.sf.extjwnl:extjwnl:2.0.2' // wordnet
+    // implementation 'net.sf.extjwnl:extjwnl-data-wn31:1.2'
+    // implementation 'edu.stanford.nlp:stanford-corenlp:3.9.2:models'
+    implementation 'org.jgrapht:jgrapht-core:1.3.0'
+    implementation 'edu.stanford.nlp:stanford-corenlp:4.0.0'
+    implementation 'org.apache.commons:commons-lang3:3.11'
+    implementation 'commons-io:commons-io:2.8.0'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'org.slf4j:slf4j-log4j12:1.7.30'
+    implementation 'org.json:json:20200518'
+    implementation 'com.google.guava:guava:29.0-jre'
+    implementation 'com.opencsv:opencsv:5.2'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.8'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.2'
+    implementation 'com.oracle.ojdbc:ojdbc8:19.3.0.0'
+    implementation 'org.jooq:jool:0.9.0'
+    // Test
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+}
+
+generateGrammarSource {
+    outputDirectory = file("src/main/java/it/unibo/antlr/gen")
+    arguments += ["-visitor"]
+}
+
+task runAssess(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "it.unibo.assess.AssessScalability"
+    jvmArgs = ['-Dcom.sun.management.jmxremote',
+               '-Dcom.sun.management.jmxremote.port=1089',
+               '-Dcom.sun.management.jmxremote.ssl=false',
+               '-Dcom.sun.management.jmxremote.authenticate=false',
+               '-Xmx16g']
+}
+
+task runDescribe(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "it.unibo.describe.DescribeScalability"
+    jvmArgs = ['-Dcom.sun.management.jmxremote',
+               '-Dcom.sun.management.jmxremote.port=1089',
+               '-Dcom.sun.management.jmxremote.ssl=false',
+               '-Dcom.sun.management.jmxremote.authenticate=false',
+               '-Xmx16g']
+}
+
+task testPython(type: Exec) {
+    workingDir 'src/main/python'
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+        commandLine 'cmd', '/c', 'runTests.bat'
+    } else {
+        commandLine './runTests.sh'
+    }
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+defaultTasks 'clean', 'build', 'check', 'testPython', 'war'
