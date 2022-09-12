@@ -42,6 +42,10 @@ jobs:
           ./download.sh
           ./start.sh
           ./stop.sh
+          ls -las build/
+          ls -las build/reports/
+          ls -las build/reports/jacoco/
+          ls -las build/reports/jacoco/test/
       - name: Generate JaCoCo Badge
         uses: cicirello/jacoco-badge-generator@v2
         with:
