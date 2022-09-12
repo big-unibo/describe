@@ -106,6 +106,7 @@ task testPython(type: Exec) {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
 }
 
 jacocoBadgeGenSetting {
@@ -118,10 +119,6 @@ jacocoTestReport {
         xml.enabled true
         csv.enabled true
     }
-}
-
-test {
-    finalizedBy jacocoTestReport
 }
 
 defaultTasks 'clean', 'build', 'check', 'testPython', 'jacocoTestReport', 'generateJacocoBadge', 'war'
