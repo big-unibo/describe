@@ -5,7 +5,6 @@ plugins {
     id 'jacoco'
     id 'org.jetbrains.kotlin.jvm' version '1.7.10'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
-    id "com.github.dawnwords.jacoco.badge" version "0.2.4"
 }
 
 java { toolchain {languageVersion = JavaLanguageVersion.of(14) } }
@@ -85,22 +84,9 @@ task runDescribe(type: JavaExec) {
                '-Xmx16g']
 }
 
-task testPython(type: Exec) {
-    workingDir 'src/main/python'
-    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
-        commandLine 'cmd', '/c', 'runTests.bat'
-    } else {
-        commandLine './runTests.sh'
-    }
-}
-
 test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
-}
-
-jacocoBadgeGenSetting {
-    readmePath "../README.md"
 }
 
 jacocoTestReport {
@@ -111,4 +97,11 @@ jacocoTestReport {
     }
 }
 
-defaultTasks 'clean', 'build', 'check', 'testPython', 'jacocoTestReport', 'generateJacocoBadge', 'war'
+if (hasProperty('buildScan')) {
+    buildScan {
+        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+        termsOfServiceAgree = 'yes'
+    }
+}
+
+defaultTasks 'clean', 'build', 'check', 'jacocoTestReport', 'war'
