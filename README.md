@@ -1,38 +1,33 @@
-# Intentional OLAP
+# Intentional OLAP: Describe
 
-Master:  ![Master](https://travis-ci.com/w4bo/experiments-assess.svg?token=eCxgQzWEteuAmE58GzVG&branch=master)
-Develop: ![Develop](https://travis-ci.com/w4bo/experiments-assess.svg?token=eCxgQzWEteuAmE58GzVG&branch=develop)
+[![build](https://github.com/big-unibo/describe/actions/workflows/build.yml/badge.svg)](https://github.com/big-unibo/describe/actions/workflows/build.yml)
 
-# Running this project
+## Research papers
 
-Downloading the code, installing Java 14 and checking if the tests pass
+Please refer/cite to the following research paper:
 
-    git clone git@github.com:w4bo/experiments-assess.git
-    cd experiments-assess
-    curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
-    jabba install openjdk@1.14.0
-    jabba use openjdk@1.14.0
+Francia, Matteo, et al. "Enhancing cubes with models to describe multidimensional data." **Information Systems Frontiers** (2022): 31-48. DOI: https://doi.org/10.1007/s10796-021-10147-3
+- Chédin, Antoine, et al. "The tell-tale cube." **European Conference on Advances in Databases and Information Systems**. Springer, Cham, 2020. DOI: https://doi.org/10.1007/978-3-030-54832-2\_16
+
+## Running the experiments
+
+This repository allows the user to:
+1. download the necessary datasets;
+2. bring up a Docker container with MySQL;
+3. load the datasets into MySQL;
+4. run the tests.
+
+Running the experiments requires the following software to be installed:
+- Docker
+- Java 14
+- Python 3.6.9
+
+Once the software is installed, execute the following code to run the tests.
+
     cd intentional
-    cd src/main/python 
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-    deactivate
-    cd -
-    git pull; ./gradlew --info
-
-## Describe
-
-Deploy the web application on Tomcat
-
-    git pull; ./gradlew clean war; rm -r "C:\Program Files\Apache Software Foundation\Tomcat 9.0_Tomcat9-8083\webapps\IOLAP"; cp build/libs/IOLAP.war "C:\Program Files\Apache Software Foundation\Tomcat 9.0_Tomcat9-8083\webapps"
-
-Running the scalability experiments
-
-    git checkout resources/describe/time.csv; git pull; rm resources/describe/time.csv; ./gradlew runDescribe --info
-
-## Assess
-
-Running the scalability experiments
-
-    git checkout resources/assess/time.csv; git pull; rm resources/assess/time.csv; ./gradlew runAssess  --info
+    chmod +x *.sh
+    ./init.sh
+    ./build.sh
+    ./download.sh
+    ./start.sh
+    ./stop.sh
