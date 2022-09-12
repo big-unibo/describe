@@ -63,6 +63,7 @@ jobs:
       - name: Deploy
         run: |
           cd intentional
+          chmod +x ./gradlew
           ./gradlew shadowJar
           cd ..
           mkdir -p dist/
