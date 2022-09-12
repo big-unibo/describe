@@ -36,6 +36,7 @@ jobs:
         run: |
           cd intentional
           chmod +x *.sh
+          chmod +x ./gradlew
           ./init.sh
           ./build.sh
           ./download.sh
