@@ -5,6 +5,7 @@ plugins {
     id 'jacoco'
     id 'org.jetbrains.kotlin.jvm' version '1.7.10'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id "com.github.dawnwords.jacoco.badge" version "0.2.4"
 }
 
 java { toolchain {languageVersion = JavaLanguageVersion.of(14) } }
@@ -107,4 +108,8 @@ test {
     useJUnitPlatform()
 }
 
-defaultTasks 'clean', 'build', 'check', 'testPython', 'jacocoTestReport', 'war'
+jacocoBadgeGenSetting {
+    readmePath "../README.md"
+}
+
+defaultTasks 'clean', 'build', 'check', 'testPython', 'jacocoTestReport', 'generateJacocoBadge', 'war'
