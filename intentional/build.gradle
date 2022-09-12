@@ -75,16 +75,6 @@ generateGrammarSource {
     arguments += ["-visitor"]
 }
 
-task runAssess(type: JavaExec) {
-    classpath = sourceSets.main.runtimeClasspath
-    main = "it.unibo.assess.AssessScalability"
-    jvmArgs = ['-Dcom.sun.management.jmxremote',
-               '-Dcom.sun.management.jmxremote.port=1089',
-               '-Dcom.sun.management.jmxremote.ssl=false',
-               '-Dcom.sun.management.jmxremote.authenticate=false',
-               '-Xmx16g']
-}
-
 task runDescribe(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "it.unibo.describe.DescribeScalability"
