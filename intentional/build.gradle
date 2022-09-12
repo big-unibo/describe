@@ -112,4 +112,16 @@ jacocoBadgeGenSetting {
     readmePath "../README.md"
 }
 
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        csv.enabled true
+    }
+}
+
+test {
+    finalizedBy jacocoTestReport
+}
+
 defaultTasks 'clean', 'build', 'check', 'testPython', 'jacocoTestReport', 'generateJacocoBadge', 'war'
