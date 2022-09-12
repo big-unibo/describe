@@ -67,20 +67,20 @@ class TestDescribeK {
             var cube: DataFrame
             var c: DataFrame
 
-            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by product_subcategory for product_subcategory in ('Bagels', 'Beer', 'Bologna')")
+            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by PRODUCT_SUBCATEGORY for PRODUCT_SUBCATEGORY in ('Bagels', 'Beer', 'Bologna')")
             cube = DescribeExecute.execute(d, path).second
-            cube = cube.sortedBy("product_subcategory")
-            c = dataFrameOf("unit_sales", "product_subcategory", "zscore_unit_sales")(
+            cube = cube.sortedBy("PRODUCT_SUBCATEGORY")
+            c = dataFrameOf("unit_sales", "PRODUCT_SUBCATEGORY", "zscore_unit_sales")(
                     815,    "Bagels",    -0.779,
                     27183,  "Beer",       1.412,
                     2588,   "Bologna",   -0.632,
             )
             c.names.forEach { assertEquals(c[it], cube[it], it) }
 
-            d = DescribeExecute.parse(d, "with sales_fact_1997 describe unit_sales by product_subcategory for product_subcategory in ('Bagels', 'Beer', 'Wine')", false)
+            d = DescribeExecute.parse(d, "with sales_fact_1997 describe unit_sales by PRODUCT_SUBCATEGORY for PRODUCT_SUBCATEGORY in ('Bagels', 'Beer', 'Wine')", false)
             cube = DescribeExecute.execute(d, path).second
-            cube = cube.sortedBy("product_subcategory")
-            c = dataFrameOf("unit_sales", "product_subcategory", "zscore_unit_sales")(
+            cube = cube.sortedBy("PRODUCT_SUBCATEGORY")
+            c = dataFrameOf("unit_sales", "PRODUCT_SUBCATEGORY", "zscore_unit_sales")(
                     815,    "Bagels",   -0.108,
                     27183,  "Beer",     -0.015,
                     5155,   "Wine",     -0.511,
@@ -148,11 +148,11 @@ class TestDescribeK {
             // -- 3 ----------------------------------------------------------------------------------------------------
             d = DescribeExecute.parse(
                     "with sales_fact_1997 describe unit_sales" +
-                            " by product_subcategory, city" +
+                            " by PRODUCT_SUBCATEGORY, city" +
                             " for product_category in ('Bread', 'Beer and Wine') and country = 'USA' and store_country = 'USA' and city in ('Altadena', 'Albany')", false)
             cube = DescribeExecute.execute(d, path).second
-            cube = cube.sortedBy("city", "product_subcategory")
-            c = dataFrameOf("unit_sales", "city", "product_subcategory", "zscore_unit_sales")(
+            cube = cube.sortedBy("city", "PRODUCT_SUBCATEGORY")
+            c = dataFrameOf("unit_sales", "city", "PRODUCT_SUBCATEGORY", "zscore_unit_sales")(
                     16, "Albany", "Bagels", -0.588,
                     528, "Albany", "Beer", 2.868,
                     124, "Albany", "Muffins", 0.141,
@@ -192,7 +192,7 @@ class TestDescribeK {
             assertEquals(45, cube.nrow)
 
             // -- 1 ----------------------------------------------------------------------------------------------------
-            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by the_year, product_subcategory")
+            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by the_year, PRODUCT_SUBCATEGORY")
             cube = DescribeExecute.execute(d, path).second
             assertEquals(102, cube.nrow)
 
@@ -212,10 +212,10 @@ class TestDescribeK {
             var cube: DataFrame
             var c: DataFrame
 
-            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by product_subcategory for the_month = '1997-04' and product_category in ('Bread', 'Beer and Wine', 'Fruit', 'Meat')", false)
+            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by PRODUCT_SUBCATEGORY for the_month = '1997-04' and product_category in ('Bread', 'Beer and Wine', 'Fruit', 'Meat')", false)
             cube = DescribeExecute.execute(d, path).second
-            cube = cube.sortedBy("product_subcategory")
-            c = dataFrameOf("unit_sales", "product_subcategory", "zscore_unit_sales")(
+            cube = cube.sortedBy("PRODUCT_SUBCATEGORY")
+            c = dataFrameOf("unit_sales", "PRODUCT_SUBCATEGORY", "zscore_unit_sales")(
                     48, "Bagels", -0.634,
                     2116, "Beer", 3.244,
                     192, "Bologna", -0.364,
@@ -333,10 +333,10 @@ class TestDescribeK {
             var cube: DataFrame
             var c: DataFrame
 
-            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by product_subcategory for country = 'USA' and store_country = 'USA' and the_month = '1997-04' and product_category in ('Bread', 'Beer and Wine', 'Fruit', 'Meat')", false)
+            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by PRODUCT_SUBCATEGORY for country = 'USA' and store_country = 'USA' and the_month = '1997-04' and product_category in ('Bread', 'Beer and Wine', 'Fruit', 'Meat')", false)
             cube = DescribeExecute.execute(d, path, oldInterest = false).second
-            cube = cube.sortedBy("product_subcategory")
-            c = dataFrameOf("unit_sales", "product_subcategory", "zscore_unit_sales", "peculiarity", "novelty", "surprise")(
+            cube = cube.sortedBy("PRODUCT_SUBCATEGORY")
+            c = dataFrameOf("unit_sales", "PRODUCT_SUBCATEGORY", "zscore_unit_sales", "peculiarity", "novelty", "surprise")(
                     48, "Bagels", -0.634, 0.195, 1, 1,
                     2116, "Beer", 3.244, 1.000, 1, 1,
                     192, "Bologna", -0.364, 0.112, 1, 1,
@@ -392,7 +392,7 @@ class TestDescribeK {
             var cube: DataFrame
             var c: DataFrame
 
-            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by product_name for product_subcategory in ('Beer') and product_name in ('Good Chablis Wine', 'Good Chardonnay', 'Good Chardonnay Wine', 'Good Imported Beer', 'Good Light Beer', 'Pearl Imported Beer')", false)
+            d = DescribeExecute.parse("with sales_fact_1997 describe unit_sales by product_name for PRODUCT_SUBCATEGORY in ('Beer') and product_name in ('Good Chablis Wine', 'Good Chardonnay', 'Good Chardonnay Wine', 'Good Imported Beer', 'Good Light Beer', 'Pearl Imported Beer')", false)
             cube = DescribeExecute.execute(d, path).second
             c = dataFrameOf("unit_sales", "product_name", "zscore_unit_sales")(
                     25654, "Good Imported Beer", 1.414,
@@ -500,7 +500,7 @@ class TestDescribeK {
             var d: Describe?
             var c: DataFrame?
 
-            d = DescribeExecute.parse("with sales describe unit_sales by product_subcategory for product_category = 'Bread'", false)
+            d = DescribeExecute.parse("with sales describe unit_sales by PRODUCT_SUBCATEGORY for product_category = 'Bread'", false)
             c = DescribeExecute.execute(d, path, oldInterest = false).second
             assertEquals(3, Vcoord.size)
             assertEquals(3, Vmemb.size)
@@ -510,7 +510,7 @@ class TestDescribeK {
                     "Bagels" to 1.0,
             ), Vmemb)
 
-            d = DescribeExecute.parse(d, "with sales describe unit_sales by product_subcategory, the_year for product_category = 'Bread'", false)
+            d = DescribeExecute.parse(d, "with sales describe unit_sales by PRODUCT_SUBCATEGORY, the_year for product_category = 'Bread'", false)
             c = DescribeExecute.execute(d, path, oldInterest = false).second
             assertEquals(6, Vcoord.size)
             assertEquals(4, Vmemb.size)
@@ -531,7 +531,7 @@ class TestDescribeK {
         try {
             var d: Describe = DescribeExecute.parse("with sales_fact_1997 describe unit_sales, store_sales by product_category")
             DescribeExecute.execute(d, path)
-            d = DescribeExecute.parse(d, "with sales_fact_1997 describe unit_sales, store_sales by product_subcategory")
+            d = DescribeExecute.parse(d, "with sales_fact_1997 describe unit_sales, store_sales by PRODUCT_SUBCATEGORY")
             DescribeExecute.execute(d, path)
             d = DescribeExecute.parse(d, "with sales_fact_1997 describe unit_sales, store_sales by store_country")
             DescribeExecute.execute(d, path)
@@ -544,7 +544,7 @@ class TestDescribeK {
     @Test
     fun rollup() {
         try {
-            var d: Describe = DescribeExecute.parse("with sales_fact_1997 describe unit_sales, store_sales by product_subcategory")
+            var d: Describe = DescribeExecute.parse("with sales_fact_1997 describe unit_sales, store_sales by PRODUCT_SUBCATEGORY")
             DescribeExecute.execute(d, path)
             d = DescribeExecute.parse(d, "with sales_fact_1997 describe unit_sales, store_sales by product_category")
             DescribeExecute.execute(d, path)
