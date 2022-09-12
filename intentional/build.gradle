@@ -2,16 +2,36 @@ plugins {
     id 'java-library'
     id 'war'
     id 'antlr'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+    id 'jacoco'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
 }
 
+
+java { toolchain {languageVersion = JavaLanguageVersion.of(14) } }
+
+kotlin { jvmToolchain { languageVersion.set(JavaLanguageVersion.of(14)) } }
+
 compileJava {
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
+    dependsOn generateGrammarSource
+    sourceCompatibility = '14'
+    targetCompatibility = '14'
+}
+
+compileKotlin {
+    dependsOn generateGrammarSource
+    kotlinOptions {
+        jvmTarget = "14"
+    }
+}
+
+compileTestKotlin {
+    dependsOn generateGrammarSource
+    kotlinOptions {
+        jvmTarget = "14"
+    }
 }
 
 repositories {
-    jcenter()
     mavenCentral()
 }
 
@@ -23,7 +43,7 @@ dependencies {
     implementation 'javax:javaee-api:8.0.1'
     implementation 'io.ktor:ktor-server-servlet:1.4.3'
     // kotlin
-    implementation 'de.mpicbg.scicomp:krangl:0.15'
+    implementation 'com.github.holgerbrandl:krangl:0.18.4'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     // java
     implementation 'mysql:mysql-connector-java:8.0.21'
@@ -83,20 +103,8 @@ task testPython(type: Exec) {
     }
 }
 
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-
 test {
     useJUnitPlatform()
 }
 
-defaultTasks 'clean', 'build', 'check', 'testPython', 'war'
+defaultTasks 'clean', 'build', 'check', 'testPython', 'jacocoTestReport', 'war'
