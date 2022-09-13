@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/big-unibo/describe/compare/1.0.0...1.0.1) (2022-09-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.fasterxml.jackson.datatype:jackson-datatype-jsr310 to v2.11.4 ([7830c9f](https://github.com/big-unibo/describe/commit/7830c9f3f7682d4bbf8db0b35dfade3a0ae2f690))
+* **deps:** update dependency com.google.guava:guava to v30 ([81adad2](https://github.com/big-unibo/describe/commit/81adad27cea64c6ed7ef7516ed6a184308b1ca5b))
+
 ## 1.0.0 (2022-09-13)
 
 
