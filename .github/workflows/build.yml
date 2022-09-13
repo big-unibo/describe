@@ -46,12 +46,7 @@ jobs:
         uses: cicirello/jacoco-badge-generator@v2
         with:
           generate-branches-badge: true
-          jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: tests
-          path: /home/runner/work/assess/assess/intentional/build/reports/tests
+          jacoco-csv-file: intentional/build/reports/jacoco/test/jacocoTestReport.csv
 
   release:
     needs:
