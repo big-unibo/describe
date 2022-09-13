@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/big-unibo/describe/compare/1.0.2...1.0.3) (2022-09-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v1.6.8 ([5acf09f](https://github.com/big-unibo/describe/commit/5acf09f51fc87b5614930d684132da63b0492fde))
+* **deps:** update dependency org.antlr:antlr4 to v4.5.3 ([ebaad05](https://github.com/big-unibo/describe/commit/ebaad05e892735265573eac0ed3e2d48cdd13b38))
+
 ## [1.0.2](https://github.com/big-unibo/describe/compare/1.0.1...1.0.2) (2022-09-13)
 
 
