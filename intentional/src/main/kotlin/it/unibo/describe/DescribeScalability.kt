@@ -196,9 +196,9 @@ fun run(sessionId: String, intentions: List<String>, t: Int, cube: String, versi
         }
 
         if (cube.contains("covid", true)) { //  || cube.contains("sales", true)
-            var c = res.second.rename(*res.second.names.map { it to it.toLowerCase() }.toTypedArray())
+            var c = res.second.rename(*res.second.names.map { it to it.lowercase() }.toTypedArray())
             c = c.filter { it[res.third.first] eq res.third.second }
-            val join = fact.innerJoin(c, by = d.attributes.map { it.toLowerCase() }, suffices = "" to "bc_").removeIf { it.name.contains("bc_") }
+            val join = fact.innerJoin(c, by = d.attributes.map { it.lowercase() }, suffices = "" to "bc_").removeIf { it.name.contains("bc_") }
             if (firstIntention) {
                 coverage = join
             } else {
@@ -250,6 +250,6 @@ fun getEntireCube(c: String): DataFrame {
     DBmanager.executeDataQuery(cube, s) {
         res = DataFrame.fromResultSet(it)
     }
-    res = res.rename(*res.names.map { it to it.toLowerCase() }.toTypedArray())
+    res = res.rename(*res.names.map { it to it.lowercase() }.toTypedArray())
     return res
 }

@@ -57,7 +57,7 @@ public abstract class Intention implements IIntention {
     public Intention(final Intention i, final boolean accumulateAttributes) {
         if (i == null) {
             sessionStep = 0;
-            filename = UUID.randomUUID().toString();
+            setFilename(UUID.randomUUID().toString());
             measures = Sets.newLinkedHashSet();
             clause = Sets.newLinkedHashSet();
             attributes = Sets.newHashSet();
@@ -67,7 +67,7 @@ public abstract class Intention implements IIntention {
             prevClause = Sets.newLinkedHashSet();
         } else {
             sessionStep = i.sessionStep + 1;
-            filename = i.getFilename();
+            setFilename(i.getFilename());
             prevMeasures = Sets.newLinkedHashSet(i.measures);
             prevAttributes = Sets.newLinkedHashSet(i.attributes);
             prevClause = Sets.newLinkedHashSet(i.clause);
@@ -84,6 +84,10 @@ public abstract class Intention implements IIntention {
         }
     }
 
+    public void setFilename(final String filename) {
+        this.filename = filename;
+    }
+
     public Set<Triple<String, String, List<String>>> getPrevClause() {
         return prevClause;
     }
@@ -98,19 +102,26 @@ public abstract class Intention implements IIntention {
     }
 
     public void addMeasures(final Object... measures) {
-        this.measures.addAll(Sets.newLinkedHashSet(Arrays.stream(measures).map(m -> m.toString().replace("benchmark.", "").replace(cube + ".", "")).collect(Collectors.toList())));
-    }
-
-    public void setMeasures(final List<String> measures) {
-        this.measures = Sets.newLinkedHashSet(measures);
+        this.measures.addAll(Sets.newLinkedHashSet(Arrays.stream(measures).map(m -> m.toString().toLowerCase().replace("benchmark.", "").replace(cube + ".", "")).collect(Collectors.toList())));
     }
 
     public void setMeasures(final Set<String> measures) {
-        this.measures = Sets.newLinkedHashSet(measures);
+        setMeasures((Collection<String>) measures);
+    }
+
+    public void setMeasures(final Collection<String> measures) {
+        this.measures = measures.stream().map(String::toLowerCase).collect(Collectors.toSet());
     }
 
     public void addClause(Triple<String, String, List<String>> clause) {
         final Iterator<Triple<String, String, List<String>>> iterator = this.clause.iterator();
+        attributes.forEach(a -> {
+            final Optional<String> lca = DependencyGraph.lca(cube, clause.getLeft(), a);
+            if (lca.isPresent() && !lca.get().equalsIgnoreCase(a)) {
+                throw new IllegalArgumentException("Internal predicate on " + a);
+            }
+        });
+
         while (iterator.hasNext()) {
             final Triple<String, String, List<String>> a = iterator.next();
             final Optional<String> lca = DependencyGraph.lca(cube, a.getLeft(), clause.getLeft());
@@ -139,7 +150,11 @@ public abstract class Intention implements IIntention {
         throw new IllegalArgumentException("Could not find the clause");
     }
 
-    public void setAttribute(final Object... optAttributes) {
+    public void setAttributes(final Set<String> optAttributes) {
+        this.attributes = optAttributes;
+    }
+
+    public void setAttributes(final Object... optAttributes) {
         this.attributes = Sets.newHashSet(optAttributes).stream().map(Object::toString).collect(Collectors.toSet());
     }
 
@@ -161,14 +176,9 @@ public abstract class Intention implements IIntention {
             while (iterator.hasNext()) {
                 final String a = iterator.next();
                 final Optional<String> lca = DependencyGraph.lca(getCube(), a, attribute);
-                if (lca.isPresent() && (lca.get().equalsIgnoreCase(a) || lca.get().equalsIgnoreCase(attribute))) {
-                    if (replace) {
-                        iterator.remove();
-                    } else {
-                        properties.add(attribute);
-                        toAdd = false;
-                    }
-                }
+                // if (lca.isPresent()) {
+                //     throw new IllegalArgumentException("Cannot have two (or more) levels (" + a + ", " + attribute + ") from the same hierarchy in the by clause");
+                // }
             }
             if (toAdd) {
                 attributes.add(attribute.replace("benchmark.", "").replace(cube + ".", ""));
@@ -217,6 +227,7 @@ public abstract class Intention implements IIntention {
             return "debug";
         }
         return filename;
+//        return "debug";
     }
 
     @Override
@@ -241,6 +252,10 @@ public abstract class Intention implements IIntention {
     @Override
     public Set<Triple<String, String, List<String>>> getClauses() {
         return clause;
+    }
+
+    public void setClauses(final Set<Triple<String, String, List<String>>> clauses) {
+        this.clause = clauses;
     }
 
     /**
@@ -270,6 +285,7 @@ public abstract class Intention implements IIntention {
                 .replace("M", "000000")
                 .replace("G", "000000000");
     }
+
     /**
      * Write a cube to file
      *
@@ -291,9 +307,9 @@ public abstract class Intention implements IIntention {
                         L.debug(line);
                         if (i++ == 5) {
                             final List<String> result = Arrays.stream(line.split("\\|")).map(String::trim).filter(t -> !t.isEmpty()).collect(Collectors.toList());
-                            statistics.compute("query_rows",  (k, v) -> (v == null ? 0 : (Double) v) + Double.parseDouble(replaceQuantifiers(result.get(2))));
+                            statistics.compute("query_rows", (k, v) -> (v == null ? 0 : (Double) v) + Double.parseDouble(replaceQuantifiers(result.get(2))));
                             statistics.compute("query_bytes", (k, v) -> (v == null ? 0 : (Double) v) + Double.parseDouble(replaceQuantifiers(result.get(3))));
-                            statistics.compute("query_cost",  (k, v) -> (v == null ? 0 : (Double) v) + Double.parseDouble(replaceQuantifiers(result.get(4)).split(" ")[0]));
+                            statistics.compute("query_cost", (k, v) -> (v == null ? 0 : (Double) v) + Double.parseDouble(replaceQuantifiers(result.get(4)).split(" ")[0]));
                         }
                     }
                     final String finalExecutionPlan = executionPlan;
@@ -500,6 +516,10 @@ public abstract class Intention implements IIntention {
             json.put(rowJson);
         }
         return json;
+    }
+
+    public void setProperties(final Set<String> properties) {
+        this.properties = properties;
     }
 
     public Set<String> getProperties() {

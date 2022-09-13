@@ -31,7 +31,11 @@ models = args.models
 ###############################################################################
 # APPLY MODELS
 ###############################################################################
-X = pd.read_csv(path + file + "_" + str(session_step) + ".csv", encoding="utf-8")
+try:
+    X = pd.read_csv(path + file + "_" + str(session_step) + ".csv", encoding="utf-8")
+except:
+    X = pd.read_csv(path + file + "_" + str(session_step) + ".csv", encoding="cp1252")
+
 X.columns = [x.lower() for x in X.columns]
 cells = len(X.index)
 measures = [x["MEA"].lower() for x in cube["MC"]]

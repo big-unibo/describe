@@ -53,7 +53,7 @@ public final class QueryGenerator {
         final List<String> acc = Lists.newArrayList();
         executeMetaQuery(cube, "select distinct table_name " +
                 "from `" + tabLEVEL + "` l join `" + tabCOLUMN + "` c on l.level_name = c.column_name join `" + tabTABLE + "` t on c.table_id = t.table_id " +
-                "where level_name in (" + Arrays.stream(attributes).map(a -> cube.getDbms().equals("mysql")? a : a.toUpperCase()).reduce((a, b) -> "'" + a + "','" + b + "'").get() + ")", res -> {
+                "where level_name in (" + Arrays.stream(attributes).map(a -> "'" + (cube.getDbms().equals("mysql")? a : a.toUpperCase()) + "'").reduce((a, b) -> a + "," + b).get() + ")", res -> {
             while (res.next()) {
                 final String table = res.getString(name(tabTABLE));
                 if (!table.equalsIgnoreCase(cube.getFactTable())) {
@@ -151,6 +151,15 @@ public final class QueryGenerator {
                                 res.getString(name(tabTABLE))));
             }
         });
+        return attributes;
+    }
+
+    public static List<String> getLevelsFromMember(final Cube cube, final String member) {
+        final List<String> attributes = Lists.newLinkedList();
+        executeMetaQuery(cube, "select " + name(tabLEVEL) + " from `" + tabLEVEL + "` l, `" + tabCOLUMN + "` c, `" + tabTABLE + "` t, `" + tabMEMBER + "` m where c.table_id = t.table_id and l.column_id = c.column_id and l.level_id = m.level_id and m." + name(tabMEMBER) + "='" + member + "'", res -> {
+            while (res.next()) {
+                attributes.add(res.getString(name(tabLEVEL)));
+        }});
         return attributes;
     }
 }

@@ -16,6 +16,7 @@ cubes:
     factTable: ft
     synonyms:
       - covid
+      - COVID-19
     metadata: covid_weekly
     dbms: mysql
     ip: 127.0.0.1

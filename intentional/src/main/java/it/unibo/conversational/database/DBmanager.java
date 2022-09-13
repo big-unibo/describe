@@ -265,7 +265,6 @@ public final class DBmanager {
         L.debug(sql);
         try (
                 Statement stmt = (isMeta ? getMetaConnection(cube) : getDataConnection(cube)).createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)
-                // .createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ) {
             stmt.setFetchSize(1000000);
             ResultSet res = stmt.executeQuery(sql);

@@ -286,7 +286,12 @@ public final class Utils {
     public static String jsonMeasureToString(final JSONObject mcClause, final boolean rename) {
         final String s;
         if (mcClause.has(quote(Type.AGG.toString()))) {
-            s = unquote(mcClause.getString(quote(Type.AGG.toString()))) + "(" + unquote(mcClause.getString(quote(Type.MEA.toString()))) + ")";
+            final String agg = unquote(mcClause.getString(quote(Type.AGG.toString())));
+            if (agg.equalsIgnoreCase("dist")) {
+                s = "count(distinct " + unquote(mcClause.getString(quote(Type.MEA.toString()))) + ")";
+            } else {
+                s = agg + "(" + unquote(mcClause.getString(quote(Type.MEA.toString()))) + ")";
+            }
         } else {
             s = unquote(mcClause.getString(quote(Type.MEA.toString())));
         }
@@ -383,7 +388,7 @@ public final class Utils {
         while (gcIterator.hasNext()) {
             final Entity attr = QueryGenerator.getLevel(c, unquote(gcIterator.next().toString()));
             attributes.add(attr);
-            final String attrString = (hasNestedQuery ? "t1." + attr.nameInTable() : attr.fullQualifier()).toLowerCase() + (gcIterator.hasNext() ? ", " : "");
+            final String attrString = (hasNestedQuery ? "t1." + attr.nameInTable() : attr.fullQualifier()) + (gcIterator.hasNext() ? ", " : "");
             groupby += attrString;
             select += attrString;
         }
@@ -435,7 +440,7 @@ public final class Utils {
     }
 
     public static String toDate(final Cube cube, final String attribute, final String date) {
-        final String newDate;
+        String newDate = date;
         switch (cube.getDbms()) {
             case "mysql":
                 if (attribute.toLowerCase().contains("date")) {
@@ -447,13 +452,20 @@ public final class Utils {
                 }
                 return newDate;
             case "oracle":
-                if (attribute.toLowerCase().contains("date")) {
-                    newDate = "TO_DATE(" + date + ",\"YYYY-MM-DD\")";
-                } else if (attribute.toLowerCase().contains("month")) {
-                    newDate = "TO_DATE(" + date + ",\"YYYY-MM\")";
-                } else {
-                    newDate = "TO_DATE(" + date + ",\"YYYY\")";
-                }
+//                if (attribute.toLowerCase().contains("date")) {
+//                    newDate = "TO_DATE(" + date + ",\"YYYY-MM-DD\")";
+//                } else if (attribute.toLowerCase().contains("month")) {
+//                    newDate = "TO_DATE(" + date + ",\"YYYY-MM\")";
+//                } else {
+//                    newDate = "TO_DATE(" + date + ",\"YYYY\")";
+//                }
+//                if (attribute.toLowerCase().contains("date")) {
+//                    newDate = "TO_DATE(" + date + ",'YYYY-MM-DD')";
+//                } else if (attribute.toLowerCase().contains("month")) {
+//                    newDate = "TO_DATE(" + date + ",'YYYY-MM')";
+//                } else {
+//                    newDate = "TO_DATE(" + date + ",'YYYY')";
+//                }
                 return newDate;
             default:
                 throw new IllegalArgumentException(cube.getDbms() + " is not handled");

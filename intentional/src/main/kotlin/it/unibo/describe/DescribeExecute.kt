@@ -257,7 +257,7 @@ object DescribeExecute {
             properties = properties.addColumn("interest") {
                 it["model"]
                         .map<Any> { it }
-                        .zip(it["component"].map<Any> { it.toString().toLowerCase() })
+                        .zip(it["component"].map<Any> { it.toString().lowercase() })
                         .map { p ->
                             val pair = modelInterest[p.first!!]!![parseVal(p.second!!.toString())]!!
                             pair.left / pair.right
@@ -265,7 +265,7 @@ object DescribeExecute {
             }
             properties.sortedByDescending("interest").rows.forEach {
                 val rowJson = JSONObject()
-                rowJson.put("component", it["model"] as String + "=" + it["component"].toString().toLowerCase())
+                rowJson.put("component", it["model"] as String + "=" + it["component"].toString().lowercase())
                 rowJson.put("interest", (it["interest"] as Double * 1000).roundToInt() / 1000.0)
                 rowJson.put("properties", it["properties"])
                 json.append("components", rowJson)
@@ -331,7 +331,7 @@ object DescribeExecute {
 
     fun parseVal(s: String): Any {
         try {
-            if (s.toLowerCase().equals("true") || s.toLowerCase().equals("false"))
+            if (s.lowercase().equals("true") || s.lowercase().equals("false"))
                 return java.lang.Boolean.parseBoolean(s)
             else throw IllegalArgumentException()
         } catch (e: Exception) {
