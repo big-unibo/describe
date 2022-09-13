@@ -98,7 +98,6 @@ class IntentionServlet : HttpServlet() {
     companion object {
         private const val OK = 200
         private const val ERROR = 500
-        // private val cube: Cube = Config.getCube(Config.getWebapp())
         val PYTHON_PATH: String = Config.getPython()
     }
 
@@ -149,7 +148,7 @@ class IntentionServlet : HttpServlet() {
      */
     fun manipulateInString(v: String): String {
         var value = v
-        if (v.toLowerCase().startsWith("with sales ")) {
+        if (v.lowercase().startsWith("with sales ")) {
             value = "$value " //
                     .replace(",", " , ") //
                     .replace(" customer ", " customer_id ") //
