@@ -5,7 +5,7 @@
 
 ## Research papers
 
-Please refer/cite to the following research paper:
+Please refer/cite to the following research papers:
 
 - Francia, Matteo, et al. "Enhancing cubes with models to describe multidimensional data." **Information Systems Frontiers** (2022): 31-48. DOI: https://doi.org/10.1007/s10796-021-10147-3
 - Chédin, Antoine, et al. "The tell-tale cube." **European Conference on Advances in Databases and Information Systems**. Springer, Cham, 2020. DOI: https://doi.org/10.1007/978-3-030-54832-2\_16
