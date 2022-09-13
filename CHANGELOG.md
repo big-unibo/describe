@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/big-unibo/describe/compare/1.0.3...1.0.4) (2022-09-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v2 ([c49f06a](https://github.com/big-unibo/describe/commit/c49f06aed81dc0ee0b8a94ff16ff6380f7417d7a))
+* **deps:** update dependency org.jgrapht:jgrapht-core to v1.3.1 ([89e9c43](https://github.com/big-unibo/describe/commit/89e9c43ffb48c82dc3b901685a652a2638f726b8))
+
 ## [1.0.3](https://github.com/big-unibo/describe/compare/1.0.2...1.0.3) (2022-09-13)
 
 
