@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/big-unibo/describe/compare/1.0.4...1.0.5) (2022-09-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency mysql:mysql-connector-java to v8.0.30 ([cc3cc62](https://github.com/big-unibo/describe/commit/cc3cc62676da429fe9cb8acf485a1973699a7487))
+
 ## [1.0.4](https://github.com/big-unibo/describe/compare/1.0.3...1.0.4) (2022-09-13)
 
 
