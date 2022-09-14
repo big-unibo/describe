@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/big-unibo/describe/compare/1.0.7...1.0.8) (2022-09-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.jgrapht:jgrapht-core to v1.5.1 ([7b69067](https://github.com/big-unibo/describe/commit/7b69067b4b0b885ca9b80e15c92dc4eb43cc12ca))
+
 ## [1.0.7](https://github.com/big-unibo/describe/compare/1.0.6...1.0.7) (2022-09-14)
 
 
