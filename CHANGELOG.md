@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/big-unibo/describe/compare/1.0.5...1.0.6) (2022-09-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.antlr:antlr4 to v4.11.1 ([d28ee0d](https://github.com/big-unibo/describe/commit/d28ee0d32ac349dd5a73087c70a0f5d916ad3af9))
+
 ## [1.0.5](https://github.com/big-unibo/describe/compare/1.0.4...1.0.5) (2022-09-14)
 
 
