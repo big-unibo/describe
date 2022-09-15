@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/big-unibo/describe/compare/1.0.8...1.0.9) (2022-09-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.jooq:jool to v0.9.14 ([eb73c77](https://github.com/big-unibo/describe/commit/eb73c77043fcff6ccda2da83aadffcc5d2d5699b))
+
 ## [1.0.8](https://github.com/big-unibo/describe/compare/1.0.7...1.0.8) (2022-09-14)
 
 
