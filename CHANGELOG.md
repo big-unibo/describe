@@ -1,3 +1,15 @@
+## [1.0.12](https://github.com/big-unibo/describe/compare/1.0.11...1.0.12) (2022-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.guava:guava to v31 ([e87b97a](https://github.com/big-unibo/describe/commit/e87b97a42cd5e80886bf1248885966b24af61329))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-java action to v3.5.0 ([24df92b](https://github.com/big-unibo/describe/commit/24df92b49fd3bb93945b0f663b7cb159ceffd784))
+
 ## [1.0.11](https://github.com/big-unibo/describe/compare/1.0.10...1.0.11) (2022-09-15)
 
 
