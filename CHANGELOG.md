@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/big-unibo/describe/compare/1.0.14...1.0.15) (2022-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commons-io:commons-io to v2.11.0 ([58f2c15](https://github.com/big-unibo/describe/commit/58f2c15d034e6b96d8884e209b6ea646d802aa11))
+
 ## [1.0.14](https://github.com/big-unibo/describe/compare/1.0.13...1.0.14) (2022-09-16)
 
 
