@@ -1,3 +1,15 @@
+## [1.0.13](https://github.com/big-unibo/describe/compare/1.0.12...1.0.13) (2022-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.fasterxml.jackson.dataformat:jackson-dataformat-yaml to v2.13.4 ([fed9310](https://github.com/big-unibo/describe/commit/fed931064a0b3d87f4d98d4d7646b6983c4ba5fe))
+
+
+### Build and continuous integration
+
+* **deps:** update endbug/add-and-commit action to v8 ([8f892ae](https://github.com/big-unibo/describe/commit/8f892ae21600f2ef36563d5f5eaf614048a04266))
+
 ## [1.0.12](https://github.com/big-unibo/describe/compare/1.0.11...1.0.12) (2022-09-16)
 
 
