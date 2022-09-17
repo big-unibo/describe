@@ -5,7 +5,13 @@ plugins {
     id 'jacoco'
     id 'org.jetbrains.kotlin.jvm' version '1.7.10'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id "org.sonarqube" version "3.0"
 }
+
+shadowJar {
+    zip64 true
+}
+
 
 java { toolchain {languageVersion = JavaLanguageVersion.of(14) } }
 
@@ -33,6 +39,26 @@ compileTestKotlin {
 
 repositories {
     mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        csv.enabled true
+    }
+}
+
+if (hasProperty('buildScan')) {
+    buildScan {
+        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+        termsOfServiceAgree = 'yes'
+    }
 }
 
 dependencies {
@@ -84,24 +110,4 @@ task runDescribe(type: JavaExec) {
                '-Xmx16g']
 }
 
-test {
-    useJUnitPlatform()
-    finalizedBy jacocoTestReport
-}
-
-jacocoTestReport {
-    dependsOn test
-    reports {
-        xml.enabled true
-        csv.enabled true
-    }
-}
-
-if (hasProperty('buildScan')) {
-    buildScan {
-        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
-        termsOfServiceAgree = 'yes'
-    }
-}
-
-defaultTasks 'clean', 'build', 'check', 'jacocoTestReport', 'war'
+defaultTasks 'clean', 'build', 'check', 'jacocoTestReport', 'war', 'sonarqube'
