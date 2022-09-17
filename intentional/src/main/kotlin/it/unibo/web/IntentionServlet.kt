@@ -108,7 +108,7 @@ class IntentionServlet : HttpServlet() {
      * Check if empty value
      * @param value value
      */
-    fun empty(value: String?): Boolean = value == null || value.isEmpty()
+    private fun empty(value: String?): Boolean = value.isNullOrEmpty()
 
     /**
      * Send the result

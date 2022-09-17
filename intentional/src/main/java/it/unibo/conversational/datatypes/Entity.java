@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Entity implements Serializable {
   /** serialVersionUID */
   private static final long serialVersionUID = 9167592374910910963L;
-  private Optional<String> dataTable;
+  private final Optional<String> dataTable;
   /** Table of the element. */
   private final Optional<String> metaTable;
   /** Name of the reference in the other table. */

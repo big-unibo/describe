@@ -11,9 +11,6 @@ import org.json.JSONObject;
 
 import java.math.RoundingMode;
 import java.sql.JDBCType;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.*;
@@ -86,57 +83,6 @@ public final class Utils {
             // throw new IllegalArgumentException(t);
             return DataType.OTHER;
         }
-    }
-
-    /**
-     * Convdert MySQL type to DataType type.
-     *
-     * @param t type in string
-     * @return datatype
-     */
-    public static DataType getDataType(final JDBCType t) {
-        // mancano: BINARY, VARBINARY, LONGVARBINARY, NULL, OTHER, JAVA_OBJECT, DISTINCT, STRUCT, ARRAY,
-        // BLOB, CLOB, REF, DATALINK, BOOLEAN, ROWID, NCLOB, SQLXML, REF_CURSOR, BIGINT
-        if (t.equals(JDBCType.CHAR) || t.equals(JDBCType.LONGVARCHAR) || t.equals(JDBCType.VARCHAR) || t.equals(JDBCType.NCHAR) || t.equals(JDBCType.NVARCHAR)
-                || t.equals(JDBCType.LONGNVARCHAR)) {
-            return DataType.STRING;
-        } else if (t.equals(JDBCType.TINYINT) || t.equals(JDBCType.SMALLINT) || t.equals(JDBCType.INTEGER) || t.equals(JDBCType.FLOAT) || t.equals(JDBCType.REAL)
-                || t.equals(JDBCType.DOUBLE) || t.equals(JDBCType.NUMERIC) || t.equals(JDBCType.DECIMAL)) {
-            return DataType.NUMERIC;
-        } else if (t.equals(JDBCType.DATE) || t.equals(JDBCType.TIME) || t.equals(JDBCType.TIMESTAMP) || t.equals(JDBCType.TIME_WITH_TIMEZONE)
-                || t.equals(JDBCType.TIMESTAMP_WITH_TIMEZONE)) {
-            return DataType.DATE;
-        }
-        return DataType.OTHER;
-    }
-
-    /**
-     * Convert result set to json object
-     *
-     * @param rs result set
-     * @return string of the json object
-     * @throws SQLException in case of error
-     */
-    public static JSONObject resultSet2Json(final ResultSet rs) throws SQLException {
-        final ResultSetMetaData meta = rs.getMetaData();
-        final int columns = meta.getColumnCount();
-        final List<String> columnNames = new ArrayList<String>();
-        final JSONObject obj = new JSONObject();
-        for (int i = 1; i <= columns; i++) {
-            columnNames.add(meta.getColumnName(i));
-        }
-        obj.put("schema", columnNames);
-        final List<List<String>> records = new ArrayList<>();
-        while (rs.next()) { // convert each object to an human readable JSON object
-            List<String> record = new ArrayList<String>();
-            for (int i = 1; i <= columns; i++) {
-                // String key = columnNames.get(i - 1);
-                record.add(rs.getString(i));
-            }
-            records.add(record);
-        }
-        obj.put("records", records);
-        return obj;
     }
 
     public enum Type {
@@ -224,14 +170,14 @@ public final class Utils {
         /**
          * Dummy container for Servlet purpose.
          */
-        FOO;
+        FOO
     }
 
     /**
      * Double quote a string
      *
      * @param ss object
-     * @return double quoted string
+     * @return double-quoted string
      */
     public static String quote(final Object ss) {
         final String s = ss.toString();
@@ -248,7 +194,7 @@ public final class Utils {
      * Remove external quotes in string
      *
      * @param ss string
-     * @return strign without double quotes
+     * @return string without double quotes
      */
     public static String unquote(final Object ss) {
         final String s = ss.toString();
@@ -262,10 +208,9 @@ public final class Utils {
     }
 
     public static String getFrom(final Cube c, final List<Entity> attributes) {
-        String from = "";
         Set<String> tabIns = Sets.newHashSet();
         Pair<String, String> ftdet = QueryGenerator.getFactTable(c);
-        from = ftdet.getRight() + " FT";
+        String from = ftdet.getRight() + " FT";
         for (Entity mde : attributes) {
             final String idT = mde.refToOtherTable();
             if (!tabIns.contains(idT)) {
@@ -319,20 +264,8 @@ public final class Utils {
         }
     }
 
-    public static void put(JSONObject obj, final Object key, final String value) {
-        obj.put(Utils.quote(key.toString()), Utils.quote(value));
-    }
-
     public static void append(JSONObject obj, final Object key, final String value) {
         obj.append(Utils.quote(key.toString()), Utils.quote(value));
-    }
-
-    public static void put(JSONObject obj, final Object key, final JSONArray value) {
-        obj.put(Utils.quote(key.toString()), value);
-    }
-
-    public static void put(JSONObject obj, final Object key, final JSONObject value) {
-        obj.put(Utils.quote(key.toString()), value);
     }
 
     public static boolean has(JSONObject obj, final Object key) {
@@ -452,49 +385,7 @@ public final class Utils {
                 }
                 return newDate;
             case "oracle":
-//                if (attribute.toLowerCase().contains("date")) {
-//                    newDate = "TO_DATE(" + date + ",\"YYYY-MM-DD\")";
-//                } else if (attribute.toLowerCase().contains("month")) {
-//                    newDate = "TO_DATE(" + date + ",\"YYYY-MM\")";
-//                } else {
-//                    newDate = "TO_DATE(" + date + ",\"YYYY\")";
-//                }
-//                if (attribute.toLowerCase().contains("date")) {
-//                    newDate = "TO_DATE(" + date + ",'YYYY-MM-DD')";
-//                } else if (attribute.toLowerCase().contains("month")) {
-//                    newDate = "TO_DATE(" + date + ",'YYYY-MM')";
-//                } else {
-//                    newDate = "TO_DATE(" + date + ",'YYYY')";
-//                }
                 return newDate;
-            default:
-                throw new IllegalArgumentException(cube.getDbms() + " is not handled");
-        }
-    }
-
-    public static String toInterval(final Cube cube, final String attribute, final String date, final int time) {
-        switch (cube.getDbms()) {
-            case "mysql":
-                return "date_sub(" + toDate(cube, attribute, date) + ", INTERVAL " + time + " " + (attribute.contains("month") ? "MONTH" : attribute.contains("year") ? "YEAR" : "DAY") + ")";
-            case "oracle":
-                if (attribute.toLowerCase().contains("date")) {
-                    return toDate(cube, attribute, date) + " - " + time;
-                } else if (attribute.toLowerCase().contains("month")) {
-                    return toDate(cube, attribute, date) + " - interval '" + time + "' MONTH";
-                } else {
-                    return toDate(cube, attribute, date) + " - interval '" + time + "' YEAR";
-                }
-            default:
-                throw new IllegalArgumentException(cube.getDbms() + " is not handled");
-        }
-    }
-
-    public static String toIf(final Cube cube, final String c, final String t) {
-        switch (cube.getDbms()) {
-            case "mysql":
-                return "if(" + c + "," + t + ",null)";
-            case "oracle":
-                return "case when " + c + " then " + t + " else null end";
             default:
                 throw new IllegalArgumentException(cube.getDbms() + " is not handled");
         }

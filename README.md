@@ -1,7 +1,10 @@
 # Intentional OLAP: Describe
 
 [![build](https://github.com/big-unibo/describe/actions/workflows/build.yml/badge.svg)](https://github.com/big-unibo/describe/actions/workflows/build.yml)
-[![coverage](.github/badges/jacoco.svg)](.github/badges/jacoco.svg)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=big-unibo_describe&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=big-unibo_describe)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=big-unibo_describe&metric=coverage)](https://sonarcloud.io/summary/new_code?id=big-unibo_describe)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=big-unibo_describe&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=big-unibo_describe)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=big-unibo_describe&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=big-unibo_describe)
 
 ## Research papers
 

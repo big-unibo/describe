@@ -46,14 +46,6 @@ public final class DBmanager {
     }
 
     /**
-     * @param s string
-     * @return append _synonyms to the string
-     */
-    protected static String synonyms(final String s) {
-        return s + "_synonyms".toUpperCase();
-    }
-
-    /**
      * Table types.
      */
     public enum TableTypes {
@@ -242,24 +234,6 @@ public final class DBmanager {
      *
      * @param query query to execute
      */
-    public static void insertMeta(final Cube cube, final String query, final Procedure<PreparedStatement> continuation) {
-        final String sql = fixQuotes(cube, query);
-        L.debug(sql);
-        try (
-                PreparedStatement ps = DBmanager.getMetaConnection(cube).prepareStatement(sql)
-        ) {
-            continuation.apply(ps);
-        } catch (final Throwable e) {
-            e.printStackTrace();
-            throw new IllegalArgumentException(query + "\n" + e.getMessage());
-        }
-    }
-
-    /**
-     * Execute the query and return a result.
-     *
-     * @param query query to execute
-     */
     public static void executeQuery(final Cube cube, final String query, final boolean isMeta, final Procedure<ResultSet> continuation) {
         final String sql = fixQuotes(cube, query);
         L.debug(sql);
@@ -292,45 +266,6 @@ public final class DBmanager {
      */
     public static void executeDataQuery(final Cube cube, final String query, final Procedure<ResultSet> continuation) {
         executeQuery(cube, query, false, continuation);
-    }
-
-    /**
-     * Execute the query and return a result.
-     *
-     * @param query query to execute
-     */
-    public static void executeQuery(final Cube cube, final String query) {
-        final String sql = fixQuotes(cube, query);
-        L.debug(sql);
-        try (PreparedStatement pstmt = getMetaConnection(cube).prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            pstmt.executeUpdate();
-        } catch (final SQLException e) {
-            e.printStackTrace();
-            throw new IllegalArgumentException(query + "\n" + e.getMessage());
-        }
-    }
-
-    /**
-     * Execute the query and return an integer.
-     *
-     * @param query query to execute
-     * @return integer
-     */
-    public static String executeQueryReturnID(final Cube cube, final String column, final String query) {
-        final String sql = fixQuotes(cube, query);
-        L.debug(sql);
-
-        try (PreparedStatement pstmt = cube.getDbms().equals("oracle")
-                ? getMetaConnection(cube).prepareStatement(sql, new String[]{column})
-                : getMetaConnection(cube).prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            pstmt.executeUpdate();
-            final ResultSet generatedKeys = pstmt.getGeneratedKeys();
-            generatedKeys.next();
-            return generatedKeys.getString(1);
-        } catch (final SQLException e) {
-            e.printStackTrace();
-            throw new IllegalArgumentException(query + "\n" + e.getMessage());
-        }
     }
 
     public static String fixQuotes(final Cube cube, final String sql) {

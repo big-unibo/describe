@@ -106,14 +106,12 @@ public final class QueryGenerator {
     }
 
     private static String get(ResultSet res, int idx) throws SQLException {
-        switch (res.getMetaData().getColumnClassName(idx)) {
-            case "java.sql.Timestamp":
-                final Date date = new Date();
-                date.setTime(res.getTimestamp(idx).getTime());
-                return new SimpleDateFormat("yyyy-MM-dd").format(date);
-            default:
-                return res.getString(idx);
+        if ("java.sql.Timestamp".equals(res.getMetaData().getColumnClassName(idx))) {
+            final Date date = new Date();
+            date.setTime(res.getTimestamp(idx).getTime());
+            return new SimpleDateFormat("yyyy-MM-dd").format(date);
         }
+        return res.getString(idx);
     }
 
     /**

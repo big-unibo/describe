@@ -7,13 +7,13 @@ import java.io.File
 
 class Describe : Intention {
     private var models: Set<String> = Sets.newLinkedHashSet()
-    var k = Optional.absent<Int>()
+    var k: Optional<Int> = Optional.absent()
 
-    constructor(d: Describe?, accumulateAttributes: Boolean) : super(d, accumulateAttributes) {}
-    constructor(accumulateAttributes: Boolean) : super(null, accumulateAttributes) {}
+    constructor(d: Describe?, accumulateAttributes: Boolean) : super(d, accumulateAttributes)
+    constructor(accumulateAttributes: Boolean) : super(null, accumulateAttributes)
 
-    fun getModels(): Set<String> {
-        return if (models.isEmpty()) Sets.newHashSet("top-k", "bottom-k", "clustering", "outliers", "skyline") else models
+    private fun getModels(): Set<String> {
+        return models.ifEmpty { Sets.newHashSet("top-k", "bottom-k", "clustering", "outliers", "skyline") }
     }
 
     fun setModels(models: List<String>) {
@@ -36,7 +36,6 @@ class Describe : Intention {
     }
 
     companion object {
-        var id = 0
         var computeProperty = true
     }
 }
