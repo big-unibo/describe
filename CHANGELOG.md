@@ -1,3 +1,15 @@
+## [1.0.17](https://github.com/big-unibo/describe/compare/1.0.16...1.0.17) (2022-09-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.apache.commons:commons-csv to v1.9.0 ([5a2b7f9](https://github.com/big-unibo/describe/commit/5a2b7f9643bb4b128dafeb2fcd9e5a2210bfbece))
+
+
+### Build and continuous integration
+
+* **deps:** update endbug/add-and-commit action to v9 ([2e3b6e1](https://github.com/big-unibo/describe/commit/2e3b6e1cc3d20eb404a51207a7d04b0fa3b15f42))
+
 ## [1.0.16](https://github.com/big-unibo/describe/compare/1.0.15...1.0.16) (2022-09-16)
 
 
