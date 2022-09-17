@@ -41,57 +41,57 @@ fun main() {
 fun covid() {
     val intentions = listOf(
             listOf(
-                    "with COVID-19 describe deaths by continentExp",
-                    "with COVID-19 describe deaths by countriesAndTerritories for continentExp = 'America'",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for countriesAndTerritories = 'United_States_of_America'",
-                    "with COVID-19 describe deaths, cases by month, countriesAndTerritories for countriesAndTerritories = 'United_States_of_America'",
+                    "with COVID-19 describe deaths by continent",
+                    "with COVID-19 describe deaths by country for continent = 'America'",
+                    "with COVID-19 describe deaths by month, country for country = 'United States of America'",
+                    "with COVID-19 describe deaths, cases by month, country for country = 'United States of America'",
             ),
             listOf(
-                    "with COVID-19 describe deaths by continentExp",
-                    "with COVID-19 describe deaths by countriesAndTerritories for continentExp = 'America'",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for countriesAndTerritories in ('United_States_of_America', 'Italy')",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for countriesAndTerritories in ('United_States_of_America', 'Italy', 'France')",
-                    "with COVID-19 describe deaths, cases by month, countriesAndTerritories for countriesAndTerritories in ('United_States_of_America', 'Italy', 'France')",
+                    "with COVID-19 describe deaths by continent",
+                    "with COVID-19 describe deaths by country for continent = 'America'",
+                    "with COVID-19 describe deaths by month, country for country in ('United States of America', 'Italy')",
+                    "with COVID-19 describe deaths by month, country for country in ('United States of America', 'Italy', 'France')",
+                    "with COVID-19 describe deaths, cases by month, country for country in ('United States of America', 'Italy', 'France')",
             ),
             listOf(
-                    "with COVID-19 describe deaths by month for countriesAndTerritories = 'Italy'",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for countriesAndTerritories in ('Italy', ' France', ' Germany')",
-                    "with COVID-19 describe deaths by countriesAndTerritories for continentExp in ('America', 'Europe', 'Africa')",
-                    "with COVID-19 describe deaths, cases by month, countriesAndTerritories for countriesAndTerritories in ('United_States_of_America', 'Italy')",
+                    "with COVID-19 describe deaths by month for country = 'Italy'",
+                    "with COVID-19 describe deaths by month, country for country in ('Italy', ' France', ' Germany')",
+                    "with COVID-19 describe deaths by country for continent in ('America', 'Europe', 'Africa')",
+                    "with COVID-19 describe deaths, cases by month, country for country in ('United States of America', 'Italy')",
             ),
             listOf(
-                    "with COVID-19 describe deaths by month for countriesAndTerritories = 'United_States_of_America'",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for continentExp in ('America')",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for continentExp in ('America', 'Europa', 'Africa')",
-                    "with COVID-19 describe deaths by continentExp",
+                    "with COVID-19 describe deaths by month for country = 'United States of America'",
+                    "with COVID-19 describe deaths by month, country for continent in ('America')",
+                    "with COVID-19 describe deaths by month, country for continent in ('America', 'Europa', 'Africa')",
+                    "with COVID-19 describe deaths by continent",
             ),
             listOf(
                     "with COVID-19 describe deaths by month",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for countriesAndTerritories = 'Italy'",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories",
-                    "with COVID-19 describe deaths by countriesAndTerritories",
+                    "with COVID-19 describe deaths by month, country for country = 'Italy'",
+                    "with COVID-19 describe deaths by month, country",
+                    "with COVID-19 describe deaths by country",
             ),
             listOf(
-                    "with COVID-19 describe deaths by month for countriesAndTerritories = 'Italy'",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for countriesAndTerritories in ('Italy', 'Spain', 'Germany')",
-                    "with COVID-19 describe deaths by countriesAndTerritories",
-                    "with COVID-19 describe deaths by dateRep, countriesAndTerritories for countriesAndTerritories in ('Italy', 'Spain', 'Germany')",
+                    "with COVID-19 describe deaths by month for country = 'Italy'",
+                    "with COVID-19 describe deaths by month, country for country in ('Italy', 'Spain', 'Germany')",
+                    "with COVID-19 describe deaths by country",
+                    "with COVID-19 describe deaths by date, country for country in ('Italy', 'Spain', 'Germany')",
             ),
             listOf(
-                    "with COVID-19 describe deaths by month for countriesAndTerritories = 'Italy'",
-                    "with COVID-19 describe deaths, cases by month for countriesAndTerritories = 'Italy'",
-                    "with COVID-19 describe deaths by countriesAndTerritories for continentExp in ('America')",
-                    "with COVID-19 describe deaths by countriesAndTerritories for continentExp in ('America', 'Europe')",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for countriesAndTerritories in ('United_States_of_America')",
+                    "with COVID-19 describe deaths by month for country = 'Italy'",
+                    "with COVID-19 describe deaths, cases by month for country = 'Italy'",
+                    "with COVID-19 describe deaths by country for continent in ('America')",
+                    "with COVID-19 describe deaths by country for continent in ('America', 'Europe')",
+                    "with COVID-19 describe deaths by month, country for country in ('United States of America')",
             ),
             listOf(
-                    "with COVID-19 describe deaths by dateRep for countriesAndTerritories = 'Italy'",
-                    "with COVID-19 describe deaths by countriesAndTerritories for continentExp in ('Europe')",
-                    "with COVID-19 describe deaths by countriesAndTerritories for countriesAndTerritories in ('Italy', 'Spain', 'Germany')",
-                    "with COVID-19 describe deaths by month, countriesAndTerritories for countriesAndTerritories in ('Italy', 'Spain', 'Germany')",
-                    "with COVID-19 describe deaths by dateRep, countriesAndTerritories for countriesAndTerritories in ('Italy', 'Spain', 'Germany')",
-                    "with COVID-19 describe deaths by countriesAndTerritories for continentExp in ('America', 'Europe')",
-                    "with COVID-19 describe deaths, cases by dateRep for countriesAndTerritories = 'Italy'",
+                    "with COVID-19 describe deaths by date for country = 'Italy'",
+                    "with COVID-19 describe deaths by country for continent in ('Europe')",
+                    "with COVID-19 describe deaths by country for country in ('Italy', 'Spain', 'Germany')",
+                    "with COVID-19 describe deaths by month, country for country in ('Italy', 'Spain', 'Germany')",
+                    "with COVID-19 describe deaths by date, country for country in ('Italy', 'Spain', 'Germany')",
+                    "with COVID-19 describe deaths by country for continent in ('America', 'Europe')",
+                    "with COVID-19 describe deaths, cases by date for country = 'Italy'",
             ),
     )
 
@@ -210,7 +210,7 @@ fun run(sessionId: String, intentions: List<String>, t: Int, cube: String, versi
                     if (cube.contains("sales")) {
                         listOf("time_id", "product_id", "customer_id", "store_id", "promotion_id")
                     } else if (cube.contains("covid", true)) {
-                        listOf("countriesandterritories", "daterep")
+                        listOf("country", "date")
                     } else {
                         listOf()
                     }
@@ -243,7 +243,7 @@ fun getEntireCube(c: String): DataFrame {
                 // T.the_month, T.the_year, C.gender, S.store_city, S.store_country, P.product_subcategory, P.product_category
                 "select distinct FT.time_id, TO_CHAR(T.the_date, 'YYYY-MM-DD') as the_date, C.customer_id, S.store_id, P.product_id, promotion_id FROM sales_fact_1997 FT INNER JOIN time_by_day T ON FT.time_id = T.time_id INNER JOIN customer C ON FT.customer_id = C.customer_id INNER JOIN store S ON FT.store_id = S.store_id inner join product P on FT.product_id = P.product_id"
             } else {
-                "select T.daterep, T.month, T.year, C.countriesAndTerritories, C.continentExp FROM covidfact FT INNER JOIN coviddate T ON FT.daterep = T.daterep INNER JOIN country C ON FT.countriesAndTerritories = C.countriesAndTerritories"
+                "select T.date, T.month, T.year, C.country, C.continent FROM ft FT INNER JOIN dt_time T ON FT.date = T.date INNER JOIN dt_space C ON FT.country = C.country"
             }
     var res: DataFrame = dataFrameOf("foo") ("bar")
     DBmanager.executeDataQuery(cube, s) {
