@@ -340,7 +340,7 @@ public final class Utils {
                 final String value;
                 final String attrToAdd = enrichDate(c, attr.nameInTable(), (hasNestedQuery ? "t1." + attr.nameInTable() : attr.fullQualifier()));
                 if (unquote(scClause.getString(quote(Type.COP))).equalsIgnoreCase("in")) {
-                    value = "(" + values.toList().stream().map(a -> unquote(a.toString())).reduce((a, b) -> a + "," + b).get() + ")";
+                    value = "(" + values.toList().stream().map(a -> unquote(a.toString())).reduce((a, b) -> a + "," + b).orElse("") + ")";
                 } else if (unquote(scClause.getString(quote(Type.COP))).equalsIgnoreCase("between")) {
                     value = unquote(values.getString(0)) + " and " + unquote(values.getString(1));
                 } else {
@@ -359,9 +359,9 @@ public final class Utils {
             from += json.getJSONArray(quote("FROM")).toList().stream().map(innerquery -> {
                 counter.increment();
                 return "(" + Utils.createQuery(c, getObject(innerquery)) + ") t" + counter.intValue();
-            }).reduce((a, b) -> a + "," + b).get();
+            }).reduce((a, b) -> a + "," + b).orElse("");
             if (has(json, "JOIN")) {
-                where += json.getJSONArray(quote("JOIN")).toList().stream().map(attribute -> "t1." + unquote(attribute) + " = t2." + unquote(attribute)).reduce((a, b) -> a + " and " + b).get();
+                where += json.getJSONArray(quote("JOIN")).toList().stream().map(attribute -> "t1." + unquote(attribute) + " = t2." + unquote(attribute)).reduce((a, b) -> a + " and " + b).orElse("");
             }
         }
 

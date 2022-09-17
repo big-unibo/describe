@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 public final class Config {
     private static final Config c;
@@ -35,7 +36,11 @@ public final class Config {
     }
 
     public static Cube getCube(final String cube) {
-        return getCubes().stream().filter(c -> c.getFactTable().toLowerCase().equals(cube.toLowerCase()) || c.getSynonyms().stream().anyMatch(s -> s.toLowerCase().equals(cube.toLowerCase()))).findFirst().get();
+        final Optional<Cube> cur = getCubes().stream().filter(c -> c.getFactTable().equalsIgnoreCase(cube) || c.getSynonyms().stream().anyMatch(s -> s.equalsIgnoreCase(cube))).findFirst();
+        if (cur.isEmpty()) {
+            throw new IllegalArgumentException("Cube not found");
+        }
+        return cur.get();
     }
 
     public static List<Cube> getCubes() {

@@ -272,9 +272,8 @@ public abstract class Intention implements IIntention {
      * @param path      where to write
      * @param json      what will be transformed into query
      * @param qualifier file qualifier
-     * @throws Exception in case of error
      */
-    public long writeMultidimensionalCube(final String path, final JSONObject json, final String qualifier) throws Exception {
+    public long writeMultidimensionalCube(final String path, final JSONObject json, final String qualifier) {
         return writeMultidimensionalCube(path, Utils.createQuery(cube, json), qualifier);
     }
 

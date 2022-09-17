@@ -6,6 +6,7 @@ import it.unibo.conversational.Procedure;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nonnull;
 import java.sql.*;
 import java.util.Map;
 import java.util.Set;
@@ -238,7 +239,7 @@ public final class DBmanager {
         final String sql = fixQuotes(cube, query);
         L.debug(sql);
         try (
-                Statement stmt = (isMeta ? getMetaConnection(cube) : getDataConnection(cube)).createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)
+                @Nonnull Statement stmt = (isMeta ? getMetaConnection(cube) : getDataConnection(cube)).createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)
         ) {
             stmt.setFetchSize(1000000);
             ResultSet res = stmt.executeQuery(sql);
