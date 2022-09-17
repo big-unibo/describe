@@ -208,6 +208,9 @@ public final class DBmanager {
             }
         }
         pool.put("meta", connMetaSchema);
+        if (connMetaSchema == null) {
+            throw new IllegalArgumentException("MetaConnection is null");
+        }
         return connMetaSchema;
     }
 
@@ -227,6 +230,9 @@ public final class DBmanager {
             }
         }
         pool.put("data", connDataSchema);
+        if (connDataSchema == null) {
+            throw new IllegalArgumentException("DataConnection is null");
+        }
         return connDataSchema;
     }
 
