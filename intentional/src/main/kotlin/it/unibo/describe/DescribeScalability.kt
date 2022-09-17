@@ -22,8 +22,7 @@ import java.util.*
 
 object Scalability {
     val L: Logger = LoggerFactory.getLogger(Scalability::class.java)
-    val computeProperty = false
-    val path = "resources/describe/output/"
+    const val path = "resources/describe/output/"
     val writer = Files.newBufferedWriter(Paths.get("resources/describe/time.csv"))
     val csvPrinter = CSVPrinter(writer, CSVFormat.DEFAULT)
     val writer2 = Files.newBufferedWriter(Paths.get("resources/describe/sessions.csv"))

@@ -8,28 +8,6 @@ import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 
 public class DependencyGraph {
-    private static Graph<String, DefaultEdge> getCovidMartDependencies() {
-        final DefaultDirectedGraph<String, DefaultEdge> g = new DefaultDirectedGraph<>(DefaultEdge.class);
-        // DATE
-        g.addVertex("daterep");
-        g.addVertex("month");
-        g.addEdge("daterep", "month");
-        g.addVertex("year");
-        g.addEdge("month", "year");
-        g.addVertex("all_date");
-        g.addEdge("year", "all_date");
-
-        // COUNTRY
-        g.addVertex("geoid");
-        g.addVertex("countriesandterritories");
-        g.addEdge("geoid", "countriesandterritories");
-        g.addVertex("continentexp");
-        g.addEdge("countriesandterritories", "continentexp");
-        g.addVertex("all_country");
-        g.addEdge("continentexp", "all_country");
-        return g;
-    }
-
     private static Graph<String, DefaultEdge> getCovidWeeklyMarDependencies() {
         final DefaultDirectedGraph<String, DefaultEdge> g = new DefaultDirectedGraph<>(DefaultEdge.class);
         // DATE
@@ -54,13 +32,8 @@ public class DependencyGraph {
 
     public static Graph<String, DefaultEdge> getDependencies(final Cube cube) {
         switch (cube.getFactTable()) {
-            case "covidfact":
-                return getCovidMartDependencies();
             case "ft":
                 return getCovidWeeklyMarDependencies();
-            case "frencheletricityft":
-            case "frencheletricityft_ext":
-                return getFrenchElectDependencies();
             case "sales_fact_1997":
                 return getFoodMartDependencies();
             case "lineorder2": // ssb cube
@@ -71,54 +44,6 @@ public class DependencyGraph {
                 return getSSBDependencies();
         }
         throw new IllegalArgumentException(DependencyGraph.class + ": unknown schema " + cube.getFactTable());
-    }
-
-    private static Graph<String, DefaultEdge> getFrenchElectDependencies() {
-        final DefaultDirectedGraph<String, DefaultEdge> g = new DefaultDirectedGraph<>(DefaultEdge.class);
-        g.addVertex("annee");
-        g.addVertex("allannee");
-        g.addEdge("annee", "allannee");
-
-        g.addVertex("secteurnaf2");
-        g.addVertex("grandsecteur");
-        g.addEdge("secteurnaf2", "grandsecteur");
-        g.addVertex("allsecteur");
-        g.addEdge("grandsecteur", "allsecteur");
-
-        g.addVertex("categorieconsommation");
-        g.addVertex("allcategorie");
-        g.addEdge("categorieconsommation", "allcategorie");
-
-        g.addVertex("iris");
-        g.addVertex("population");
-        g.addEdge("iris", "population");
-        g.addVertex("typeiris");
-        g.addVertex("population");
-        g.addEdge("iris", "typeiris");
-        g.addEdge("iris", "population");
-        g.addVertex("commune");
-        g.addEdge("iris", "commune");
-        g.addVertex("epci");
-        g.addVertex("popcomm");
-        g.addEdge("commune", "epci");
-        g.addEdge("commune", "popcomm");
-        g.addVertex("typeepci");
-        g.addVertex("popepci");
-        g.addEdge("epci", "popepci");
-        g.addEdge("epci", "typeepci");
-        g.addVertex("departement");
-        g.addEdge("epci", "departement");
-        g.addVertex("region");
-        g.addEdge("departement", "region");
-        g.addVertex("popdept");
-        g.addEdge("departement", "popdept");
-        g.addVertex("alliris");
-        g.addEdge("region", "alliris");
-        g.addVertex("popregion");
-        g.addEdge("region", "popregion");
-        g.addEdge("typeepci", "alliris");
-        g.addEdge("typeiris", "alliris");
-        return g;
     }
 
     private static Graph<String, DefaultEdge> getSSBDependencies() {
