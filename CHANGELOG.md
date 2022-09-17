@@ -1,3 +1,15 @@
+## [1.0.19](https://github.com/big-unibo/describe/compare/1.0.18...1.0.19) (2022-09-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.json:json to v20220320 ([f6eab64](https://github.com/big-unibo/describe/commit/f6eab64e0c614e25f2a5db2c51418ed9cb95c5a1))
+
+
+### Dependency updates
+
+* **deps:** update mysql docker tag to v8 ([7b2bc64](https://github.com/big-unibo/describe/commit/7b2bc6428e8697771bdbb77c27b22491101cede8))
+
 ## [1.0.18](https://github.com/big-unibo/describe/compare/1.0.17...1.0.18) (2022-09-17)
 
 
