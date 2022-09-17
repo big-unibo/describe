@@ -5,13 +5,20 @@ plugins {
     id 'jacoco'
     id 'org.jetbrains.kotlin.jvm' version '1.7.10'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
-    id "org.sonarqube" version "3.0"
+    id "org.sonarqube" version "3.4.0.2513"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "big-unibo_describe"
+    property "sonar.organization", "big-unibo"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
 
 shadowJar {
     zip64 true
 }
-
 
 java { toolchain {languageVersion = JavaLanguageVersion.of(14) } }
 
