@@ -16,7 +16,7 @@ public final class Config {
             mapper.findAndRegisterModules();
             c = mapper.readValue(Config.class.getClassLoader().getResource("config.example.yml"), Config.class);
         } catch (final Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
             throw new IllegalArgumentException("config.example.yml not found.");
         }
     }

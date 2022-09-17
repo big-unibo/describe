@@ -187,7 +187,7 @@ public final class DBmanager {
             try {
                 c.close();
             } catch (final Exception e) {
-                e.printStackTrace();
+                // e.printStackTrace();
             }
         }));
     }
@@ -203,7 +203,7 @@ public final class DBmanager {
             try {
                 connMetaSchema = getConnection(cube, false);
             } catch (final Exception e1) {
-                e1.printStackTrace();
+                // e1.printStackTrace();
                 connMetaSchema = null;
             }
         }
@@ -222,7 +222,7 @@ public final class DBmanager {
             try {
                 connDataSchema = getConnection(cube, true);
             } catch (final Exception e1) {
-                e1.printStackTrace();
+                // e1.printStackTrace();
                 connDataSchema = null;
             }
         }
@@ -246,7 +246,7 @@ public final class DBmanager {
             continuation.apply(res);
             res.close();
         } catch (final Throwable e) {
-            e.printStackTrace();
+            // e.printStackTrace();
             throw new IllegalArgumentException(query + "\n" + e.getMessage());
         }
     }
