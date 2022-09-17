@@ -492,25 +492,4 @@ public abstract class Intention implements IIntention {
         }
         return key;
     }
-
-    public static JSONArray getRawObject(final String[] header, final List<List<String>> currData) {
-        final JSONArray json = new JSONArray();
-        for (List<String> currDatum : currData) {
-            final String[] array = toArray(currDatum);
-            final JSONObject rowJson = new JSONObject();
-            for (int j = 0; j < array.length; j++) {
-                rowJson.put(header[j], array[j]);
-            }
-            json.put(rowJson);
-        }
-        return json;
-    }
-
-    public void setProperties(final Set<String> properties) {
-        this.properties = properties;
-    }
-
-    public Set<String> getProperties() {
-        return properties;
-    }
 }

@@ -5,6 +5,8 @@ import it.unibo.describe.Describe
 import it.unibo.describe.DescribeExecute
 import it.unibo.describe.DescribeExecute.Vcoord
 import it.unibo.describe.DescribeExecute.Vmemb
+import it.unibo.describe.covid
+import it.unibo.describe.foodmart
 import krangl.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
@@ -590,4 +592,9 @@ class TestDescribeK {
         DescribeExecute.parse("with sales_fact_1997 describe unit_sales for customer_id = 10 and store_id = 11 and the_date = '1997-01-20' by customer_id")
     }
 
+    @Test
+    fun testScalability() {
+        covid()
+        foodmart()
+    }
 }
