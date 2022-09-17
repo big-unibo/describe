@@ -276,16 +276,13 @@ public final class DBmanager {
     }
 
     public static String fixQuotes(final Cube cube, final String sql) {
-        switch (cube.getDbms()) {
-            case "mysql":
-                return sql;
-            case "oracle":
-                return sql
-                        .replace("\"", "'")
-                        .replaceAll("`", "\"")
-                        .replaceAll(";", "");
-            default:
-                throw new IllegalArgumentException("Unknown DBMS " + cube.getDbms());
-        }
+        return switch (cube.getDbms()) {
+            case "mysql" -> sql;
+            case "oracle" -> sql
+                    .replace("\"", "'")
+                    .replaceAll("`", "\"")
+                    .replaceAll(";", "");
+            default -> throw new IllegalArgumentException("Unknown DBMS " + cube.getDbms());
+        };
     }
 }

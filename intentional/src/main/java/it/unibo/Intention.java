@@ -169,18 +169,10 @@ public abstract class Intention implements IIntention {
                 // TODO: probably a smarter way to avoid all* (e.g., allCustomers) would be to check the DependencyGraph)
                 continue;
             }
-            boolean toAdd = true;
-            final Iterator<String> iterator = attributes.iterator();
-            while (iterator.hasNext()) {
-                final String a = iterator.next();
+            for (String a : attributes) {
                 final Optional<String> lca = DependencyGraph.lca(getCube(), a, attribute);
-                // if (lca.isPresent()) {
-                //     throw new IllegalArgumentException("Cannot have two (or more) levels (" + a + ", " + attribute + ") from the same hierarchy in the by clause");
-                // }
             }
-            if (toAdd) {
-                attributes.add(attribute.replace("benchmark.", "").replace(cube + ".", ""));
-            }
+            attributes.add(attribute.replace("benchmark.", "").replace(cube + ".", ""));
         }
     }
 
@@ -294,7 +286,7 @@ public abstract class Intention implements IIntention {
         L.warn(sql);
         statistics.compute("query_characters", (k, v) -> (v == null ? 0 : (Double) v) + sql.length());
         if (cube.getDbms().equalsIgnoreCase("oracle")) {
-            executeDataQuery(cube, "explain plan for " + sql, r -> {
+            executeDataQuery(cube, "explain plan for " + sql, r ->
                 executeDataQuery(cube, "select plan_table_output from table(dbms_xplan.display())", res -> {
                     int i = 0;
                     String executionPlan = "";
@@ -311,8 +303,7 @@ public abstract class Intention implements IIntention {
                     }
                     final String finalExecutionPlan = executionPlan;
                     statistics.compute("executionplan", (k, v) -> (v == null ? "" : v + "\n") + finalExecutionPlan);
-                });
-            });
+                }));
         }
         final int sessionStep = getSessionStep();
         final String filename = getFilename();
@@ -496,16 +487,16 @@ public abstract class Intention implements IIntention {
 
     protected static List<String> getSortedKey(int[] currSchema, final List<String> row) {
         final List<String> key = Lists.newLinkedList();
-        for (int i = 0; i < currSchema.length; i++) {
-            key.add(row.get(currSchema[i]));
+        for (int j : currSchema) {
+            key.add(row.get(j));
         }
         return key;
     }
 
     public static JSONArray getRawObject(final String[] header, final List<List<String>> currData) {
         final JSONArray json = new JSONArray();
-        for (int i = 0; i < currData.size(); i++) {
-            final String[] array = toArray(currData.get(i));
+        for (List<String> currDatum : currData) {
+            final String[] array = toArray(currDatum);
             final JSONObject rowJson = new JSONObject();
             for (int j = 0; j < array.length; j++) {
                 rowJson.put(header[j], array[j]);

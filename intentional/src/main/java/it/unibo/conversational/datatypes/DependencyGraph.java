@@ -1,15 +1,11 @@
 package it.unibo.conversational.datatypes;
 
 import com.google.common.base.Optional;
-import com.google.common.collect.Sets;
 import it.unibo.conversational.database.Cube;
 import org.jgrapht.Graph;
 import org.jgrapht.alg.lca.NaiveLCAFinder;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
-
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class DependencyGraph {
     private static Graph<String, DefaultEdge> getCovidMartDependencies() {
@@ -267,7 +263,7 @@ public class DependencyGraph {
     }
 
     public static Optional<String> lca(final Cube cube, final String s1, final String s2) {
-        final NaiveLCAFinder<String, DefaultEdge> lca = new NaiveLCAFinder<String, DefaultEdge>(getDependencies(cube));
+        final NaiveLCAFinder<String, DefaultEdge> lca = new NaiveLCAFinder<>(getDependencies(cube));
         return Optional.fromNullable(lca.getLCA(s1.toLowerCase(), s2.toLowerCase()));
     }
 }
