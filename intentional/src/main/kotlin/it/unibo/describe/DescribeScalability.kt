@@ -75,7 +75,7 @@ fun covid() {
                     "with COVID-19 describe deaths by month for country = 'Italy'",
                     "with COVID-19 describe deaths by month, country for country in ('Italy', 'Spain', 'Germany')",
                     "with COVID-19 describe deaths by country",
-                    "with COVID-19 describe deaths by date, country for country in ('Italy', 'Spain', 'Germany')",
+                    "with COVID-19 describe deaths by week, country for country in ('Italy', 'Spain', 'Germany')",
             ),
             listOf(
                     "with COVID-19 describe deaths by month for country = 'Italy'",
@@ -85,13 +85,13 @@ fun covid() {
                     "with COVID-19 describe deaths by month, country for country in ('United States of America')",
             ),
             listOf(
-                    "with COVID-19 describe deaths by date for country = 'Italy'",
+                    "with COVID-19 describe deaths by week for country = 'Italy'",
                     "with COVID-19 describe deaths by country for continent in ('Europe')",
                     "with COVID-19 describe deaths by country for country in ('Italy', 'Spain', 'Germany')",
                     "with COVID-19 describe deaths by month, country for country in ('Italy', 'Spain', 'Germany')",
-                    "with COVID-19 describe deaths by date, country for country in ('Italy', 'Spain', 'Germany')",
+                    "with COVID-19 describe deaths by week, country for country in ('Italy', 'Spain', 'Germany')",
                     "with COVID-19 describe deaths by country for continent in ('America', 'Europe')",
-                    "with COVID-19 describe deaths, cases by date for country = 'Italy'",
+                    "with COVID-19 describe deaths, cases by week for country = 'Italy'",
             ),
     )
 
