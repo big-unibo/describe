@@ -210,7 +210,7 @@ fun run(sessionId: String, intentions: List<String>, t: Int, cube: String, versi
                     if (cube.contains("sales")) {
                         listOf("time_id", "product_id", "customer_id", "store_id", "promotion_id")
                     } else if (cube.contains("covid", true)) {
-                        listOf("country", "date")
+                        listOf("country", "week")
                     } else {
                         listOf()
                     }
@@ -243,7 +243,7 @@ fun getEntireCube(c: String): DataFrame {
                 // T.the_month, T.the_year, C.gender, S.store_city, S.store_country, P.product_subcategory, P.product_category
                 "select distinct FT.time_id, TO_CHAR(T.the_date, 'YYYY-MM-DD') as the_date, C.customer_id, S.store_id, P.product_id, promotion_id FROM sales_fact_1997 FT INNER JOIN time_by_day T ON FT.time_id = T.time_id INNER JOIN customer C ON FT.customer_id = C.customer_id INNER JOIN store S ON FT.store_id = S.store_id inner join product P on FT.product_id = P.product_id"
             } else {
-                "select T.date, T.month, T.year, C.country, C.continent FROM ft FT INNER JOIN dt_time T ON FT.date = T.date INNER JOIN dt_space C ON FT.country = C.country"
+                "select T.week, T.month, T.year, C.country, C.continent FROM FT INNER JOIN DT_TIME T ON FT.week = T.week INNER JOIN DT_SPACE C ON FT.country = C.country"
             }
     var res: DataFrame = dataFrameOf("foo") ("bar")
     DBmanager.executeDataQuery(cube, s) {
