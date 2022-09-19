@@ -134,8 +134,8 @@ fun foodmart() {
             val intentions = listOf(
                     "with sales describe unit_sales, store_sales by the_date", // 323
                     "with sales describe unit_sales, store_sales by the_date, customer_id", // 20k
-                    "with sales describe unit_sales, store_sales by the_date, product_id", // 77k
-                    "with sales describe unit_sales, store_sales by the_date, customer_id,  product_id"// 87k
+                    // "with sales describe unit_sales, store_sales by the_date, product_id", // 77k
+                    // "with sales describe unit_sales, store_sales by the_date, customer_id, product_id"// 87k
             )
             run("foodmart0", intentions, t, "sales", version)
         }

@@ -15,7 +15,6 @@ import kotlin.math.roundToInt
 
 class TestDescribeK {
 
-    val path = "resources/describe/output/"
     @BeforeEach
     fun before() {
         Intention.DEBUG = true

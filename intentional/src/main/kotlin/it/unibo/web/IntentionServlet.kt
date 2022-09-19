@@ -74,7 +74,7 @@ class IntentionServlet : HttpServlet() {
                 error.put("error", ex.localizedMessage)
                 write(response, error.toString())
             } catch (e: Exception) {
-                e.printStackTrace()
+                // e.printStackTrace()
             }
         }
         DBmanager.closeAllConnections()
