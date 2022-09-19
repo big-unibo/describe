@@ -1,3 +1,101 @@
+## [1.0.21](https://github.com/big-unibo/describe/compare/1.0.20...1.0.21) (2022-09-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.slf4j:slf4j-log4j12 to v2 ([b508eed](https://github.com/big-unibo/describe/commit/b508eed3d21449c73016d7936116cd38ad5c9849))
+
+## [1.0.20](https://github.com/big-unibo/describe/compare/1.0.19...1.0.20) (2022-09-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.slf4j:slf4j-api to v2 ([a0956df](https://github.com/big-unibo/describe/commit/a0956dffb25b0d8fa2efa89fc2f5209c483b963a))
+
+## [1.0.19](https://github.com/big-unibo/describe/compare/1.0.18...1.0.19) (2022-09-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.json:json to v20220320 ([f6eab64](https://github.com/big-unibo/describe/commit/f6eab64e0c614e25f2a5db2c51418ed9cb95c5a1))
+
+
+### Dependency updates
+
+* **deps:** update mysql docker tag to v8 ([7b2bc64](https://github.com/big-unibo/describe/commit/7b2bc6428e8697771bdbb77c27b22491101cede8))
+
+## [1.0.18](https://github.com/big-unibo/describe/compare/1.0.17...1.0.18) (2022-09-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.apache.commons:commons-lang3 to v3.12.0 ([e14c9fe](https://github.com/big-unibo/describe/commit/e14c9fe60459ca45411615d76a496f26e73936b3))
+
+## [1.0.17](https://github.com/big-unibo/describe/compare/1.0.16...1.0.17) (2022-09-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.apache.commons:commons-csv to v1.9.0 ([5a2b7f9](https://github.com/big-unibo/describe/commit/5a2b7f9643bb4b128dafeb2fcd9e5a2210bfbece))
+
+
+### Build and continuous integration
+
+* **deps:** update endbug/add-and-commit action to v9 ([2e3b6e1](https://github.com/big-unibo/describe/commit/2e3b6e1cc3d20eb404a51207a7d04b0fa3b15f42))
+
+## [1.0.16](https://github.com/big-unibo/describe/compare/1.0.15...1.0.16) (2022-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency edu.stanford.nlp:stanford-corenlp to v4.5.1 ([47a8d67](https://github.com/big-unibo/describe/commit/47a8d67311b202e65e1ba1dd52032a9297ebb099))
+* **deps:** update dependency org.json:json to v20211205 ([4402c3f](https://github.com/big-unibo/describe/commit/4402c3fc9081767050a99b2cdc5e34ac14f2d7d4))
+
+## [1.0.15](https://github.com/big-unibo/describe/compare/1.0.14...1.0.15) (2022-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commons-io:commons-io to v2.11.0 ([58f2c15](https://github.com/big-unibo/describe/commit/58f2c15d034e6b96d8884e209b6ea646d802aa11))
+
+## [1.0.14](https://github.com/big-unibo/describe/compare/1.0.13...1.0.14) (2022-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.opencsv:opencsv to v5.7.0 ([e3ce2a4](https://github.com/big-unibo/describe/commit/e3ce2a421ea695a0dc4689364453f232bc3faf87))
+
+## [1.0.13](https://github.com/big-unibo/describe/compare/1.0.12...1.0.13) (2022-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.fasterxml.jackson.dataformat:jackson-dataformat-yaml to v2.13.4 ([fed9310](https://github.com/big-unibo/describe/commit/fed931064a0b3d87f4d98d4d7646b6983c4ba5fe))
+
+
+### Build and continuous integration
+
+* **deps:** update endbug/add-and-commit action to v8 ([8f892ae](https://github.com/big-unibo/describe/commit/8f892ae21600f2ef36563d5f5eaf614048a04266))
+
+## [1.0.12](https://github.com/big-unibo/describe/compare/1.0.11...1.0.12) (2022-09-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.guava:guava to v31 ([e87b97a](https://github.com/big-unibo/describe/commit/e87b97a42cd5e80886bf1248885966b24af61329))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-java action to v3.5.0 ([24df92b](https://github.com/big-unibo/describe/commit/24df92b49fd3bb93945b0f663b7cb159ceffd784))
+
+## [1.0.11](https://github.com/big-unibo/describe/compare/1.0.10...1.0.11) (2022-09-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.slf4j:slf4j-log4j12 to v1.7.36 ([140ef98](https://github.com/big-unibo/describe/commit/140ef98db4a0da6506707304d7f958cd114e6a45))
+
 ## [1.0.10](https://github.com/big-unibo/describe/compare/1.0.9...1.0.10) (2022-09-15)
 
 
