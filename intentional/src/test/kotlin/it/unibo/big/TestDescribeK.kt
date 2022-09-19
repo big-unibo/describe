@@ -594,7 +594,13 @@ class TestDescribeK {
 
     @Test
     fun testScalability() {
-        covid()
-        foodmart()
+        try {
+            covid()
+            foodmart()
+            assertTrue(true)
+        } catch (e: java.lang.Exception) {
+            e.printStackTrace()
+            fail<Any>(e.message)
+        }
     }
 }

@@ -1,0 +1,16 @@
+cardinality,coverage,dataset,id,intention,intention_characters,intersection,pivot_time,query_characters,run,sessionid,time_interest,time_model,time_query,version
+5,0.22476877040261153,COVID-19,0,with COVID-19 describe deaths by continent,42,0.0,0,168.0,0,covid0,0,2495,73,adbis
+49,0.22476877040261153,COVID-19,1,with COVID-19 describe deaths by country for continent = 'America',66,0.04452153801676785,1,199.0,0,covid0,10,3047,33,adbis
+18,0.22476877040261153,COVID-19,2,"with COVID-19 describe deaths by month, country for country = 'United States of America'",88,0.04590069284064665,1,304.0,0,covid0,4,3406,4,adbis
+18,0.22476877040261153,COVID-19,3,"with COVID-19 describe deaths, cases by month, country for country = 'United States of America'",95,0.05490420360308836,0,325.0,0,covid0,4,3506,4,adbis
+5,0.22476877040261153,COVID-19,0,with COVID-19 describe deaths by continent,42,0.0,0,168.0,0,covid1,0,2836,128,adbis
+49,0.22476877040261153,COVID-19,1,with COVID-19 describe deaths by country for continent = 'America',66,0.04452153801676785,1,199.0,0,covid1,8,3092,22,adbis
+36,0.22476877040261153,COVID-19,2,"with COVID-19 describe deaths by month, country for country in ('United States of America', 'Italy')",100,0.04590069284064665,0,315.0,0,covid1,6,3483,5,adbis
+54,0.22476877040261153,COVID-19,3,"with COVID-19 describe deaths by month, country for country in ('United States of America', 'Italy', 'France')",110,0.04727587200922456,1,324.0,0,covid1,7,3508,6,adbis
+54,0.22476877040261153,COVID-19,4,"with COVID-19 describe deaths, cases by month, country for country in ('United States of America', 'Italy', 'France')",117,0.04864709268854347,2,345.0,0,covid1,10,3474,3,adbis
+18,0.2426550598476605,COVID-19,0,with COVID-19 describe deaths by month for country = 'Italy',60,0.0,1,231.0,0,covid2,0,3360,2,adbis
+18,0.24326713819368878,COVID-19,1,"with COVID-19 describe deaths by month, country for country in ('Italy', ' France', ' Germany')",95,0.005006954102920723,0,309.0,0,covid2,16,3556,3,adbis
+159,0.25129216539717086,COVID-19,2,"with COVID-19 describe deaths by country for continent in ('America', 'Europe', 'Africa')",89,0.01440384102427314,2,220.0,0,covid2,15,3479,43,adbis
+36,0.25129216539717086,COVID-19,3,"with COVID-19 describe deaths, cases by month, country for country in ('United States of America', 'Italy')",107,0.015716568993074054,0,336.0,0,covid2,6,3406,4,adbis
+18,0.07276931447225245,COVID-19,0,with COVID-19 describe deaths by month for country = 'United States of America',79,0.0,1,250.0,0,covid3,0,3444,2,adbis
+796,0.07453754080522307,COVID-19,1,"with COVID-19 describe deaths by month, country for continent in ('America')",76,0.004541326067211626,17,292.0,0,covid3,15,3613,45,adbis
