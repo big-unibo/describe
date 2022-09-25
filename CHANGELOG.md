@@ -1,3 +1,10 @@
+## [1.0.25](https://github.com/big-unibo/describe/compare/1.0.24...1.0.25) (2022-09-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.json:json to v20220924 ([fa340e1](https://github.com/big-unibo/describe/commit/fa340e12753c6c2cfc6311fb65af1caa6d36049b))
+
 ## [1.0.24](https://github.com/big-unibo/describe/compare/1.0.23...1.0.24) (2022-09-21)
 
 
