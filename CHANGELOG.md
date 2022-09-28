@@ -1,3 +1,15 @@
+## [1.0.26](https://github.com/big-unibo/describe/compare/1.0.25...1.0.26) (2022-09-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.slf4j:slf4j-api to v2.0.3 ([6572679](https://github.com/big-unibo/describe/commit/6572679c843adab5089934900395d4e6757ab09f))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-java action to v3.5.1 ([7f65aad](https://github.com/big-unibo/describe/commit/7f65aadc3a93560772bbf677355751bd3a78aeb7))
+
 ## [1.0.25](https://github.com/big-unibo/describe/compare/1.0.24...1.0.25) (2022-09-25)
 
 
