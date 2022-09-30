@@ -1,3 +1,15 @@
+## [1.0.28](https://github.com/big-unibo/describe/compare/1.0.27...1.0.28) (2022-09-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v2.1.2 ([a84df90](https://github.com/big-unibo/describe/commit/a84df9065762c7f424751b3f74ad8e8207648c6c))
+
+
+### Dependency updates
+
+* **deps:** update plugin org.jetbrains.kotlin.jvm to v1.7.20 ([f63471a](https://github.com/big-unibo/describe/commit/f63471adff028e66a0db085735eb9f4bf496fcdf))
+
 ## [1.0.27](https://github.com/big-unibo/describe/compare/1.0.26...1.0.27) (2022-09-28)
 
 
