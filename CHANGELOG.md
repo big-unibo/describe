@@ -1,3 +1,23 @@
+## [1.0.29](https://github.com/big-unibo/describe/compare/1.0.28...1.0.29) (2022-10-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency mysql:mysql-connector-java to v8.0.31 ([77b708a](https://github.com/big-unibo/describe/commit/77b708a835699b16a87651127743321b87cf95e4))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.12 ([785c26a](https://github.com/big-unibo/describe/commit/785c26a128214f76992381cf6985e207235271ee))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.13 ([b652984](https://github.com/big-unibo/describe/commit/b652984bc19ab5a25d1a028afcf117b4ce7ceba4))
+* **deps:** update node.js to 16.18 ([4a74d80](https://github.com/big-unibo/describe/commit/4a74d80db62fe10caf0fff57387d036db14137f2))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.1.0 ([d7919bf](https://github.com/big-unibo/describe/commit/d7919bf44e43f3246db18c92d3b53b1f76059361))
+* **deps:** update actions/setup-java action to v3.6.0 ([489ce24](https://github.com/big-unibo/describe/commit/489ce246dd4abef91ab30517c94266fe504fa4ec))
+
 ## [1.0.28](https://github.com/big-unibo/describe/compare/1.0.27...1.0.28) (2022-09-30)
 
 
