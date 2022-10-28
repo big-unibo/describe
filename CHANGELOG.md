@@ -1,3 +1,17 @@
+## [1.0.31](https://github.com/big-unibo/describe/compare/1.0.30...1.0.31) (2022-10-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v2.1.3 ([8c40c58](https://github.com/big-unibo/describe/commit/8c40c581fa7c1d84fc3bc1e1f36663f430400694))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.14 ([2dd465f](https://github.com/big-unibo/describe/commit/2dd465fa24c540b0933304e68ff354ee87215301))
+* **deps:** update node.js to 18.12 ([b961317](https://github.com/big-unibo/describe/commit/b9613177c1332343f2871f01a14c112f37bef5f3))
+* **deps:** update node.js to v18 ([236fb62](https://github.com/big-unibo/describe/commit/236fb6286f445e64f0a873175938a8d7fab9189b))
+
 ## [1.0.30](https://github.com/big-unibo/describe/compare/1.0.29...1.0.30) (2022-10-23)
 
 
