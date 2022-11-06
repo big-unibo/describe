@@ -1,3 +1,15 @@
+## [1.0.32](https://github.com/big-unibo/describe/compare/1.0.31...1.0.32) (2022-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.fasterxml.jackson.dataformat:jackson-dataformat-yaml to v2.14.0 ([f36d3e5](https://github.com/big-unibo/describe/commit/f36d3e5c9c5b6a8c83c69d8157948fdafa9e40db))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.15 ([5195293](https://github.com/big-unibo/describe/commit/519529385b12880b7b52a49e738bdea5bab5fffd))
+
 ## [1.0.31](https://github.com/big-unibo/describe/compare/1.0.30...1.0.31) (2022-10-28)
 
 
