@@ -1,3 +1,15 @@
+## [1.0.34](https://github.com/big-unibo/describe/compare/1.0.33...1.0.34) (2022-11-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.slf4j:slf4j-api to v2.0.4 ([c027efd](https://github.com/big-unibo/describe/commit/c027efde5ce9bc588036e7b69202e0ead91af412))
+
+
+### Dependency updates
+
+* **deps:** update plugin org.jetbrains.kotlin.jvm to v1.7.21 ([abcb03f](https://github.com/big-unibo/describe/commit/abcb03fa26b413d0cc527f73a5c29a75bb6670cb))
+
 ## [1.0.33](https://github.com/big-unibo/describe/compare/1.0.32...1.0.33) (2022-11-06)
 
 
