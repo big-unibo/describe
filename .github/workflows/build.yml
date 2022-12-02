@@ -24,8 +24,7 @@ jobs:
           java-version: '14' # ${{ matrix.java }}
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.6.9' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+          python-version: 3.6
       - name: Run python
         run: |
           cd intentional/src/main/python
