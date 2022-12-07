@@ -1,3 +1,22 @@
+## [1.0.40](https://github.com/big-unibo/describe/compare/1.0.39...1.0.40) (2022-12-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v2.2.0 ([eae2a8b](https://github.com/big-unibo/describe/commit/eae2a8beb7a67fcac4cd82fc901a5b49209aec1c))
+
+
+### Dependency updates
+
+* **deps:** update dependency gradle to v7.6 ([9648112](https://github.com/big-unibo/describe/commit/96481127a02695ba81d6576b766d51ecb983e10f))
+* **deps:** update plugin org.jetbrains.kotlin.jvm to v1.7.22 ([ca12dcb](https://github.com/big-unibo/describe/commit/ca12dcbba331dc24414a1ea5a15d7004c6293442))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-java action to v3.7.0 ([734f38e](https://github.com/big-unibo/describe/commit/734f38e88f3d1e32c3da3cc67a02171e01feaeeb))
+* **deps:** update actions/setup-java action to v3.8.0 ([7ee611c](https://github.com/big-unibo/describe/commit/7ee611c5371e41a1e0baf5e6193330a5d6f428aa))
+
 ## [1.0.39](https://github.com/big-unibo/describe/compare/1.0.38...1.0.39) (2022-11-25)
 
 
