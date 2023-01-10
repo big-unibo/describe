@@ -1,3 +1,21 @@
+## [1.0.45](https://github.com/big-unibo/describe/compare/1.0.44...1.0.45) (2023-01-10)
+
+
+### Bug Fixes
+
+* **deps:** update junit5 monorepo to v5.9.2 ([9d74770](https://github.com/big-unibo/describe/commit/9d747704c36c730deacfeee83684d650562f0111))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.3.0 ([6bd7277](https://github.com/big-unibo/describe/commit/6bd727780e2a503cd0224b7199c1add30512a772))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.16 ([4286caa](https://github.com/big-unibo/describe/commit/4286caa14589f09d4cf139dd9b78ad2e7c4209b3))
+* **deps:** update node.js to 18.13 ([28b1210](https://github.com/big-unibo/describe/commit/28b1210d19c383773a70c87e47f96238309e7238))
+
 ## [1.0.44](https://github.com/big-unibo/describe/compare/1.0.43...1.0.44) (2023-01-03)
 
 
