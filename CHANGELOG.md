@@ -1,3 +1,10 @@
+## [1.0.51](https://github.com/big-unibo/describe/compare/1.0.50...1.0.51) (2023-02-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.apache.commons:commons-csv to v1.10.0 ([afb8163](https://github.com/big-unibo/describe/commit/afb81631566383b6845d17353ca51163e485340b))
+
 ## [1.0.50](https://github.com/big-unibo/describe/compare/1.0.49...1.0.50) (2023-02-01)
 
 
