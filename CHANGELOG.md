@@ -1,3 +1,21 @@
+## [1.0.52](https://github.com/big-unibo/describe/compare/1.0.51...1.0.52) (2023-02-09)
+
+
+### Bug Fixes
+
+* **ci:** working on the build ([#93](https://github.com/big-unibo/describe/issues/93)) ([9118445](https://github.com/big-unibo/describe/commit/91184456a12c0cf1cb897a85a0b15d700f318e1d))
+
+
+### Dependency updates
+
+* **deps:** update node.js to 18.14 ([ed173ac](https://github.com/big-unibo/describe/commit/ed173ac3407adad6af91d7a7b0e922b988ad7bd9))
+* **deps:** update plugin org.jetbrains.kotlin.jvm to v1.8.10 ([c1eb2f5](https://github.com/big-unibo/describe/commit/c1eb2f513e099a744c28bc799546e13152af44b3))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-java action to v3.10.0 ([e7e82f3](https://github.com/big-unibo/describe/commit/e7e82f332905c7bc04bf67855749c1cff0c670ca))
+
 ## [1.0.51](https://github.com/big-unibo/describe/compare/1.0.50...1.0.51) (2023-02-02)
 
 
