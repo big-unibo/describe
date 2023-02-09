@@ -1,7 +1,6 @@
 # Intentional OLAP: Describe
 
 [![build](https://github.com/big-unibo/describe/actions/workflows/build.yml/badge.svg)](https://github.com/big-unibo/describe/actions/workflows/build.yml)
-[![coverage](.github/badges/jacoco.svg)](.github/badges/jacoco.svg)
 
 ## Research papers
 

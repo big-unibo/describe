@@ -2,7 +2,6 @@ plugins {
     id 'java-library'
     id 'war'
     id 'antlr'
-    id 'jacoco'
     id 'org.jetbrains.kotlin.jvm' version '1.8.10'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
@@ -86,15 +85,6 @@ task runDescribe(type: JavaExec) {
 
 test {
     useJUnitPlatform()
-    finalizedBy jacocoTestReport
-}
-
-jacocoTestReport {
-    dependsOn test
-    reports {
-        xml.enabled true
-        csv.enabled true
-    }
 }
 
 if (hasProperty('buildScan')) {
@@ -104,4 +94,4 @@ if (hasProperty('buildScan')) {
     }
 }
 
-defaultTasks 'clean', 'build', 'check', 'jacocoTestReport', 'war'
+defaultTasks 'clean', 'build', 'check', 'war'
