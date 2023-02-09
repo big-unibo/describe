@@ -9,14 +9,14 @@ public final class Config {
     private static final Config c;
 
     static {
-        // Get credentials from resources/config.example.yml.
+        // Get credentials from resources/config.yml.
         try {
             final ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
             mapper.findAndRegisterModules();
-            c = mapper.readValue(Config.class.getClassLoader().getResource("config.example.yml"), Config.class);
+            c = mapper.readValue(Config.class.getClassLoader().getResource("config.yml"), Config.class);
         } catch (final Exception e) {
             e.printStackTrace();
-            throw new IllegalArgumentException("config.example.yml not found.");
+            throw new IllegalArgumentException("config.yml not found.");
         }
     }
 
