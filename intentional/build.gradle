@@ -56,7 +56,7 @@ dependencies {
     implementation 'commons-io:commons-io:2.11.0'
     implementation 'org.slf4j:slf4j-api:2.0.6'
     implementation 'org.slf4j:slf4j-log4j12:2.0.6'
-    implementation 'org.json:json:20220924'
+    implementation 'org.json:json:20230227'
     implementation 'com.google.guava:guava:31.1-jre'
     implementation 'com.opencsv:opencsv:5.7.1'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.2'
