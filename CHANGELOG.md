@@ -1,3 +1,10 @@
+## [1.0.55](https://github.com/big-unibo/describe/compare/1.0.54...1.0.55) (2023-02-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v2.2.4 ([5f9400e](https://github.com/big-unibo/describe/commit/5f9400e0da3aa7c43d33c42116ff7c3e2316d798))
+
 ## [1.0.54](https://github.com/big-unibo/describe/compare/1.0.53...1.0.54) (2023-02-27)
 
 
