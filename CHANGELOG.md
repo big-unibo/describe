@@ -1,3 +1,15 @@
+## [1.0.56](https://github.com/big-unibo/describe/compare/1.0.55...1.0.56) (2023-03-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.jooq:jool to v0.9.15 ([6047a83](https://github.com/big-unibo/describe/commit/6047a8302c870d20e15df05969c81c7cab81862a))
+
+
+### Dependency updates
+
+* **deps:** update node.js to 18.15 ([2bd6176](https://github.com/big-unibo/describe/commit/2bd61761123df371a45d8826df85e1da9522b198))
+
 ## [1.0.55](https://github.com/big-unibo/describe/compare/1.0.54...1.0.55) (2023-02-28)
 
 
