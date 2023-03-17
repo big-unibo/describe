@@ -1,3 +1,20 @@
+## [1.0.57](https://github.com/big-unibo/describe/compare/1.0.56...1.0.57) (2023-03-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.slf4j:slf4j-api to v2.0.7 ([06bdad3](https://github.com/big-unibo/describe/commit/06bdad33e8f94577d550c8b1669e64cc423637aa))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.4.0 ([651235f](https://github.com/big-unibo/describe/commit/651235f319483b7dfb1bd453f7f8824219395086))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.17 ([f558b75](https://github.com/big-unibo/describe/commit/f558b755ca196beb5321f61b1866581d0ef2c9c0))
+
 ## [1.0.56](https://github.com/big-unibo/describe/compare/1.0.55...1.0.56) (2023-03-08)
 
 
