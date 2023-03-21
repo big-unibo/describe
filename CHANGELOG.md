@@ -1,3 +1,15 @@
+## [1.0.59](https://github.com/big-unibo/describe/compare/1.0.58...1.0.59) (2023-03-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency edu.stanford.nlp:stanford-corenlp to v4.5.3 ([c5543b6](https://github.com/big-unibo/describe/commit/c5543b62e08a80f8046152cef48570716da20ab0))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.19 ([cc4b2ce](https://github.com/big-unibo/describe/commit/cc4b2ced446307c73b2eafb62d851884d93b1de9))
+
 ## [1.0.58](https://github.com/big-unibo/describe/compare/1.0.57...1.0.58) (2023-03-18)
 
 
