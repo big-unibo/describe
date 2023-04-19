@@ -1,3 +1,30 @@
+## [1.0.60](https://github.com/big-unibo/describe/compare/1.0.59...1.0.60) (2023-04-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency mysql:mysql-connector-java to v8.0.33 ([8a8f684](https://github.com/big-unibo/describe/commit/8a8f684541a7bb0d558b1fbea67145d6324391c3))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.20 ([1c00782](https://github.com/big-unibo/describe/commit/1c00782be325d2a648dedb315bb7ab9eb151f24a))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.21 ([825f9b1](https://github.com/big-unibo/describe/commit/825f9b1cea2c351164ee090ee3d9f18b64a72610))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.22 ([539e29f](https://github.com/big-unibo/describe/commit/539e29fb0f00b55af498fcbd8795f4e7197eaf06))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.23 ([3e0cf98](https://github.com/big-unibo/describe/commit/3e0cf98c5050a6c35f8616c86ad67f150a96960e))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.24 ([94388b9](https://github.com/big-unibo/describe/commit/94388b9279235128a5d5c5afd9999e1ea2cb8ea6))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.25 ([871ecff](https://github.com/big-unibo/describe/commit/871ecffad8e1dbb3540eac1efe06a99a08b12ed5))
+* **deps:** update node.js to 18.16 ([45e2e9e](https://github.com/big-unibo/describe/commit/45e2e9ec5e0368ab76fee54006d748424c42af21))
+* **deps:** update plugin org.jetbrains.kotlin.jvm to v1.8.20 ([d580769](https://github.com/big-unibo/describe/commit/d58076956325f085e1144b92dc1da4cfcd4b1084))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.5.0 ([846e56e](https://github.com/big-unibo/describe/commit/846e56e15834898525106ea7bea4067191df9ae2))
+* **deps:** update actions/checkout action to v3.5.1 ([51b94de](https://github.com/big-unibo/describe/commit/51b94de207f9c8c0ca81c1b0f0cfe6db7775346d))
+* **deps:** update actions/checkout action to v3.5.2 ([380cbc3](https://github.com/big-unibo/describe/commit/380cbc33b7a5bd7d3df15bcfd286ad55f3cbd182))
+* **deps:** update actions/setup-java action to v3.11.0 ([1bcc038](https://github.com/big-unibo/describe/commit/1bcc03896d8be471c2c8d520dcaaece78d598af5))
+
 ## [1.0.59](https://github.com/big-unibo/describe/compare/1.0.58...1.0.59) (2023-03-21)
 
 
