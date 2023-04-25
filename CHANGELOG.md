@@ -1,3 +1,15 @@
+## [1.0.64](https://github.com/big-unibo/describe/compare/1.0.63...1.0.64) (2023-04-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency edu.stanford.nlp:stanford-corenlp to v4.5.4 ([17fb80c](https://github.com/big-unibo/describe/commit/17fb80c278d6ad0b90a3229fea1f1798a720697b))
+
+
+### Dependency updates
+
+* **deps:** update plugin org.jetbrains.kotlin.jvm to v1.8.21 ([f0d6b1a](https://github.com/big-unibo/describe/commit/f0d6b1a4e3c5ad8dd15a51b3a9747f11db2f94a8))
+
 ## [1.0.63](https://github.com/big-unibo/describe/compare/1.0.62...1.0.63) (2023-04-24)
 
 
