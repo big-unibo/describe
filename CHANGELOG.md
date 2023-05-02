@@ -1,3 +1,15 @@
+## [1.0.66](https://github.com/big-unibo/describe/compare/1.0.65...1.0.66) (2023-05-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.jgrapht:jgrapht-core to v1.5.2 ([2439715](https://github.com/big-unibo/describe/commit/2439715c86cde3f51e24d70154f94198cc1d4fa7))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.26 ([2f4335e](https://github.com/big-unibo/describe/commit/2f4335e3a648e13b2b6e7fea6816a773791a0b60))
+
 ## [1.0.65](https://github.com/big-unibo/describe/compare/1.0.64...1.0.65) (2023-04-26)
 
 
