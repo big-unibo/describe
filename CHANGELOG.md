@@ -1,3 +1,21 @@
+## [1.0.67](https://github.com/big-unibo/describe/compare/1.0.66...1.0.67) (2024-07-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.fasterxml.jackson.dataformat:jackson-dataformat-yaml to v2.15.4 ([3627a8f](https://github.com/big-unibo/describe/commit/3627a8fb3e3649d61ad461afa8a77358dc15cc3d))
+
+
+### Dependency updates
+
+* **deps:** update dependency gradle to v7.6.4 ([467cbf0](https://github.com/big-unibo/describe/commit/467cbf0f130e1b31d45a0867e4ece370fc095e40))
+* **deps:** update plugin org.jetbrains.kotlin.jvm to v1.8.22 ([a3cd0a2](https://github.com/big-unibo/describe/commit/a3cd0a20d5bc25eb12ca80077e93119e19b9009b))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.5.3 ([dde7537](https://github.com/big-unibo/describe/commit/dde753768ac6109b0d90956876b36b838df41a79))
+
 ## [1.0.66](https://github.com/big-unibo/describe/compare/1.0.65...1.0.66) (2023-05-02)
 
 
