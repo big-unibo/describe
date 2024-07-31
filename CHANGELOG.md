@@ -1,3 +1,10 @@
+## [1.0.69](https://github.com/big-unibo/describe/compare/1.0.68...1.0.69) (2024-07-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency edu.stanford.nlp:stanford-corenlp to v4.5.7 ([4fbd4c6](https://github.com/big-unibo/describe/commit/4fbd4c6f29c10bab46d6c71497ede02d5ba32519))
+
 ## [1.0.68](https://github.com/big-unibo/describe/compare/1.0.67...1.0.68) (2024-07-31)
 
 
