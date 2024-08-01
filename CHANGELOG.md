@@ -1,3 +1,11 @@
+## [1.0.70](https://github.com/big-unibo/describe/compare/1.0.69...1.0.70) (2024-08-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v2.3.12 ([78355ec](https://github.com/big-unibo/describe/commit/78355ece51b308134661af30b67e8652c76f86c1))
+* **deps:** update slf4j monorepo to v2.0.13 ([0fa6159](https://github.com/big-unibo/describe/commit/0fa6159211d37200784dd9fe21717cb34186e639))
+
 ## [1.0.69](https://github.com/big-unibo/describe/compare/1.0.68...1.0.69) (2024-07-31)
 
 
