@@ -1,3 +1,23 @@
+## [1.0.71](https://github.com/big-unibo/describe/compare/1.0.70...1.0.71) (2024-08-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.fasterxml.jackson.dataformat:jackson-dataformat-yaml to v2.17.2 ([8deeb9d](https://github.com/big-unibo/describe/commit/8deeb9dce89c1feeb47db42a99215248d06ef414))
+
+
+### Dependency updates
+
+* **deps:** update mysql docker tag to v8.4 ([867dbbc](https://github.com/big-unibo/describe/commit/867dbbcb29f5aed0e42d8ed6ccb714dd8c909995))
+* **deps:** update node.js to 18.20 ([6bcbff7](https://github.com/big-unibo/describe/commit/6bcbff7772e68d46acd364851d86b3cf735d8544))
+* **deps:** update plugin org.jetbrains.kotlin.jvm to v1.9.25 ([f37ea45](https://github.com/big-unibo/describe/commit/f37ea454ff6f72501c7c0127ac398098e22800be))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v3.6.0 ([8be1b28](https://github.com/big-unibo/describe/commit/8be1b2843f1008deaa5b3b8756cde73d64879a84))
+* **deps:** update actions/setup-java action to v3.13.0 ([5ed4019](https://github.com/big-unibo/describe/commit/5ed401925d8e53fda3a0c804b15c41249d76e0df))
+
 ## [1.0.70](https://github.com/big-unibo/describe/compare/1.0.69...1.0.70) (2024-08-01)
 
 
