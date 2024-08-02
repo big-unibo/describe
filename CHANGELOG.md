@@ -1,3 +1,10 @@
+## [1.0.72](https://github.com/big-unibo/describe/compare/1.0.71...1.0.72) (2024-08-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.opencsv:opencsv to v5.9 ([8d585a6](https://github.com/big-unibo/describe/commit/8d585a6ae7f3f69024f5d30f7bf68208e950a14e))
+
 ## [1.0.71](https://github.com/big-unibo/describe/compare/1.0.70...1.0.71) (2024-08-02)
 
 
