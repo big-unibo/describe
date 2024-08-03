@@ -36,8 +36,8 @@ repositories {
 
 dependencies {
     // ANTLR 4
-    antlr "org.antlr:antlr4:4.12.0"
-    implementation 'org.antlr:antlr4:4.12.0'
+    antlr "org.antlr:antlr4:4.13.2"
+    implementation 'org.antlr:antlr4:4.13.2'
     // servlet
     implementation 'javax:javaee-api:8.0.1'
     implementation 'io.ktor:ktor-server-servlet:2.3.12'
