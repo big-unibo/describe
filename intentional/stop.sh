@@ -1,3 +1,3 @@
 #!/bin/bash
 set -exo
-docker-compose down
+docker compose down

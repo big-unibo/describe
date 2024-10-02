@@ -8,7 +8,7 @@ if [ -f .env ]; then
 fi
 
 ./stop.sh
-docker-compose up --build -d
+docker compose up --build -d
 ./wait-for-it.sh ${MYSQL_URL}:${MYSQL_PORT} --strict --timeout=420 -- echo "MySQL is up"
 
 ./gradlew --stacktrace --scan
