@@ -42,7 +42,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.6.0
       - name: Install Node
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@v4.0.4
         with:
           node-version-file: package.json
       - uses: actions/setup-java@v3.13.0
