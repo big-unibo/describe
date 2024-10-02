@@ -1,3 +1,15 @@
+## [1.0.73](https://github.com/big-unibo/describe/compare/1.0.72...1.0.73) (2024-10-02)
+
+
+### Bug Fixes
+
+* **deps:** update slf4j monorepo to v2.0.16 ([a304047](https://github.com/big-unibo/describe/commit/a30404751ae107a7b1cba8bf62634961e2aa7a45))
+
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v4.0.4 ([eab57ed](https://github.com/big-unibo/describe/commit/eab57ed168c4e8cd5350610461ad1bc32c77f811))
+
 ## [1.0.72](https://github.com/big-unibo/describe/compare/1.0.71...1.0.72) (2024-08-02)
 
 
