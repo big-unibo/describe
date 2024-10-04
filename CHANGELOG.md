@@ -1,3 +1,10 @@
+## [1.0.76](https://github.com/big-unibo/describe/compare/1.0.75...1.0.76) (2024-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commons-io:commons-io to v2.17.0 ([227226b](https://github.com/big-unibo/describe/commit/227226b61ac4735e89659924f77078a7e3331c0c))
+
 ## [1.0.75](https://github.com/big-unibo/describe/compare/1.0.74...1.0.75) (2024-10-04)
 
 
