@@ -1,3 +1,10 @@
+## [1.0.80](https://github.com/big-unibo/describe/compare/1.0.79...1.0.80) (2024-10-05)
+
+
+### Bug Fixes
+
+* **deps:** update junit5 monorepo to v5.11.2 ([65d7026](https://github.com/big-unibo/describe/commit/65d7026bf424451a8dd2c152316ca48cc2d60ec3))
+
 ## [1.0.79](https://github.com/big-unibo/describe/compare/1.0.78...1.0.79) (2024-10-05)
 
 
