@@ -1,3 +1,21 @@
+## [1.0.81](https://github.com/big-unibo/describe/compare/1.0.80...1.0.81) (2024-10-09)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.111 ([14b2d4d](https://github.com/big-unibo/describe/commit/14b2d4da01a623c9fb744e7030a9a6e7194535ec))
+* **deps:** update mysql docker tag to v9 ([8cebaa6](https://github.com/big-unibo/describe/commit/8cebaa6114c268806c115de0fc4355737bb350fa))
+* **deps:** update node.js to v20 ([da87ef1](https://github.com/big-unibo/describe/commit/da87ef1852bbfcba694a15c7690d89fb8f32aee4))
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.guava:guava to v32 ([28f7e4b](https://github.com/big-unibo/describe/commit/28f7e4b6e84644b66ea3c689f9f4f76aae6f7b98))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v4 ([438e79a](https://github.com/big-unibo/describe/commit/438e79aeef5b4b91085ccfeef71fe31b33e72e71))
+* **deps:** update actions/setup-java action to v4 ([b182b0a](https://github.com/big-unibo/describe/commit/b182b0a1f3c0eae514919b07337132a4a3c922fc))
+* **deps:** update actions/setup-python action to v5 ([5bd466d](https://github.com/big-unibo/describe/commit/5bd466d120fa1798039d56481a6172e474197b0d))
+
 ## [1.0.80](https://github.com/big-unibo/describe/compare/1.0.79...1.0.80) (2024-10-05)
 
 
