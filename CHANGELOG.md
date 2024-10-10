@@ -1,3 +1,9 @@
+## [1.0.82](https://github.com/big-unibo/describe/compare/1.0.81...1.0.82) (2024-10-10)
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.guava:guava to v33 ([c025c01](https://github.com/big-unibo/describe/commit/c025c01a7cc7919a773b9e9f2e6debeb3ec481d1))
+
 ## [1.0.81](https://github.com/big-unibo/describe/compare/1.0.80...1.0.81) (2024-10-09)
 
 ### Dependency updates
