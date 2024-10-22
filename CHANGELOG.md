@@ -1,3 +1,9 @@
+## [1.0.85](https://github.com/big-unibo/describe/compare/1.0.84...1.0.85) (2024-10-22)
+
+### Bug Fixes
+
+* **deps:** update dependency org.json:json to v20230618 ([95a147b](https://github.com/big-unibo/describe/commit/95a147bebb810bb926cd4ce34aae9af6cb3d95a2))
+
 ## [1.0.84](https://github.com/big-unibo/describe/compare/1.0.83...1.0.84) (2024-10-22)
 
 ### Dependency updates
