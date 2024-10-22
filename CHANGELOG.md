@@ -1,3 +1,14 @@
+## [1.0.84](https://github.com/big-unibo/describe/compare/1.0.83...1.0.84) (2024-10-22)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.112 ([9f54fa7](https://github.com/big-unibo/describe/commit/9f54fa7564c7a8901ad84fa5a2ae9eb723cd3ec6))
+* **deps:** update mysql docker tag to v9.1 ([e90326d](https://github.com/big-unibo/describe/commit/e90326d54f46f16bd32c44ac18cc0b400fefbc7b))
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v3 ([c81dad9](https://github.com/big-unibo/describe/commit/c81dad9f715f484fbf1febdce4a5fe23956913a8))
+
 ## [1.0.83](https://github.com/big-unibo/describe/compare/1.0.82...1.0.83) (2024-10-21)
 
 ### Bug Fixes
