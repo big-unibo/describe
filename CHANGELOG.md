@@ -1,3 +1,19 @@
+## [1.0.88](https://github.com/big-unibo/describe/compare/1.0.87...1.0.88) (2024-10-29)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.113 ([e34958d](https://github.com/big-unibo/describe/commit/e34958dce53027972c087beab02cf72d6992b39f))
+
+### Bug Fixes
+
+* **deps:** update dependency com.fasterxml.jackson.datatype:jackson-datatype-jsr310 to v2.18.1 ([9fd8123](https://github.com/big-unibo/describe/commit/9fd812320451d82155d51d0b01c11cac473ede6f))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v4.2.2 ([b5fd811](https://github.com/big-unibo/describe/commit/b5fd811edb664406ca450d37a64d85b830ea770d))
+* **deps:** update actions/setup-java action to v4.5.0 ([c9b9ef7](https://github.com/big-unibo/describe/commit/c9b9ef767206f99e950d6ab71ce25195ee792483))
+* **deps:** update actions/setup-node action to v4.1.0 ([bd027f3](https://github.com/big-unibo/describe/commit/bd027f3065571558728c4765ba9b4baa8684a2ca))
+
 ## [1.0.87](https://github.com/big-unibo/describe/compare/1.0.86...1.0.87) (2024-10-22)
 
 ### Bug Fixes
