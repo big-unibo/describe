@@ -1,3 +1,13 @@
+## [1.0.90](https://github.com/big-unibo/describe/compare/1.0.89...1.0.90) (2024-10-30)
+
+### Dependency updates
+
+* **deps:** update node.js to v22 ([0b59241](https://github.com/big-unibo/describe/commit/0b59241780d2e620d85ede47c921abeb03d871d3))
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v3.0.1 ([b0efbd0](https://github.com/big-unibo/describe/commit/b0efbd0f2eb8ffd1d5186b0045eba7f639251070))
+
 ## [1.0.89](https://github.com/big-unibo/describe/compare/1.0.88...1.0.89) (2024-10-29)
 
 ### Bug Fixes
