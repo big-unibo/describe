@@ -1,3 +1,14 @@
+## [1.0.95](https://github.com/big-unibo/describe/compare/1.0.94...1.0.95) (2024-12-12)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.116 ([#193](https://github.com/big-unibo/describe/issues/193)) ([96c9e47](https://github.com/big-unibo/describe/commit/96c9e47f84aa5bfdfb1b6e73291dadc822b5d41a))
+* **deps:** update node.js to 22.12 ([#192](https://github.com/big-unibo/describe/issues/192)) ([c475d40](https://github.com/big-unibo/describe/commit/c475d40bda5b4d9b47644a8331395977c53dcd07))
+
+### Bug Fixes
+
+* **deps:** update dependency edu.stanford.nlp:stanford-corenlp to v4.5.8 ([#194](https://github.com/big-unibo/describe/issues/194)) ([eee250f](https://github.com/big-unibo/describe/commit/eee250f86bda83ef32fc0b87a62ed2a3ff7670f0))
+
 ## [1.0.94](https://github.com/big-unibo/describe/compare/1.0.93...1.0.94) (2024-12-03)
 
 ### Bug Fixes
