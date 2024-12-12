@@ -51,7 +51,7 @@ dependencies {
     // implementation 'net.sf.extjwnl:extjwnl-data-wn31:1.2'
     // implementation 'edu.stanford.nlp:stanford-corenlp:3.9.2:models'
     implementation 'org.jgrapht:jgrapht-core:1.5.2'
-    implementation 'edu.stanford.nlp:stanford-corenlp:4.5.7'
+    implementation 'edu.stanford.nlp:stanford-corenlp:4.5.8'
     implementation 'org.apache.commons:commons-lang3:3.17.0'
     implementation 'commons-io:commons-io:2.18.0'
     implementation 'org.slf4j:slf4j-api:2.0.16'
