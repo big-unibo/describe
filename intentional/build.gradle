@@ -40,7 +40,7 @@ dependencies {
     implementation 'org.antlr:antlr4:4.13.2'
     // servlet
     implementation 'javax:javaee-api:8.0.1'
-    implementation 'io.ktor:ktor-server-servlet:3.0.2'
+    implementation 'io.ktor:ktor-server-servlet:3.0.3'
     // kotlin
     implementation 'com.github.holgerbrandl:krangl:0.18.4'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
