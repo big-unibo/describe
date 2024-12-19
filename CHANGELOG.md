@@ -1,3 +1,13 @@
+## [1.0.98](https://github.com/big-unibo/describe/compare/1.0.97...1.0.98) (2024-12-19)
+
+### Bug Fixes
+
+* **deps:** update dependency io.ktor:ktor-server-servlet to v3.0.3 ([#198](https://github.com/big-unibo/describe/issues/198)) ([79ba880](https://github.com/big-unibo/describe/commit/79ba880f921a213b69a1b6cc7380c67eabeb1748))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-java action to v4.6.0 ([#197](https://github.com/big-unibo/describe/issues/197)) ([ac70180](https://github.com/big-unibo/describe/commit/ac70180af4daa4fcaacc01ad2ce4678be116cb89))
+
 ## [1.0.97](https://github.com/big-unibo/describe/compare/1.0.96...1.0.97) (2024-12-17)
 
 ### Bug Fixes
