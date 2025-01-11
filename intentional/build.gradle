@@ -46,7 +46,7 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     // java
     implementation 'mysql:mysql-connector-java:8.0.33'
-    implementation 'org.apache.commons:commons-csv:1.12.0'
+    implementation 'org.apache.commons:commons-csv:1.13.0'
     // implementation 'net.sf.extjwnl:extjwnl:2.0.2' // wordnet
     // implementation 'net.sf.extjwnl:extjwnl-data-wn31:1.2'
     // implementation 'edu.stanford.nlp:stanford-corenlp:3.9.2:models'
