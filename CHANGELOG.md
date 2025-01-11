@@ -1,3 +1,13 @@
+## [1.0.101](https://github.com/big-unibo/describe/compare/1.0.100...1.0.101) (2025-01-11)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.119 ([#204](https://github.com/big-unibo/describe/issues/204)) ([ac96001](https://github.com/big-unibo/describe/commit/ac960013ca8931a6eea0a28931195f2255f5bc0a))
+
+### Bug Fixes
+
+* **deps:** update dependency org.apache.commons:commons-csv to v1.13.0 ([#205](https://github.com/big-unibo/describe/issues/205)) ([bdfc581](https://github.com/big-unibo/describe/commit/bdfc581a972eb4b9dd1e2c06daa5d45ba9c5a1b8))
+
 ## [1.0.100](https://github.com/big-unibo/describe/compare/1.0.99...1.0.100) (2025-01-09)
 
 ### Dependency updates
