@@ -1,3 +1,24 @@
+## [1.0.103](https://github.com/big-unibo/describe/compare/1.0.102...1.0.103) (2025-02-25)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.121 ([#211](https://github.com/big-unibo/describe/issues/211)) ([cd734a0](https://github.com/big-unibo/describe/commit/cd734a0cccc8db5efc678d2cf59ff59f490ad4c1))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.122 ([#212](https://github.com/big-unibo/describe/issues/212)) ([dd18f60](https://github.com/big-unibo/describe/commit/dd18f607f158206176a1460568550a99c5ce9c6c))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.123 ([#215](https://github.com/big-unibo/describe/issues/215)) ([fac15a5](https://github.com/big-unibo/describe/commit/fac15a57b10330a64d30a09df5594b9a9afc0962))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.124 ([#216](https://github.com/big-unibo/describe/issues/216)) ([cb816c9](https://github.com/big-unibo/describe/commit/cb816c9c455cb50f6700881ef29167868223c554))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.125 ([#217](https://github.com/big-unibo/describe/issues/217)) ([a489648](https://github.com/big-unibo/describe/commit/a4896485c28ca643846ad649c5d326f2aeac25cd))
+* **deps:** update mysql docker tag to v9.2 ([#207](https://github.com/big-unibo/describe/issues/207)) ([6fa6a7c](https://github.com/big-unibo/describe/commit/6fa6a7cc71b69d7550ed14ef735a43253af2c9f3))
+* **deps:** update node.js to 22.14 ([#213](https://github.com/big-unibo/describe/issues/213)) ([d736513](https://github.com/big-unibo/describe/commit/d736513ffec751f20af5dea50ba156e56f7bdc2b))
+
+### Bug Fixes
+
+* **deps:** update slf4j monorepo to v2.0.17 ([#219](https://github.com/big-unibo/describe/issues/219)) ([2bc0b8e](https://github.com/big-unibo/describe/commit/2bc0b8ea1e0817d9201f0c780645ae59b7e9c961))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-java action to v4.7.0 ([#210](https://github.com/big-unibo/describe/issues/210)) ([3085b42](https://github.com/big-unibo/describe/commit/3085b42f09e008aca0b920ae5cacae0c3618e307))
+* **deps:** update actions/setup-node action to v4.2.0 ([#208](https://github.com/big-unibo/describe/issues/208)) ([8919d53](https://github.com/big-unibo/describe/commit/8919d535669be74397a384e5e9865b1f6e79c085))
+
 ## [1.0.102](https://github.com/big-unibo/describe/compare/1.0.101...1.0.102) (2025-01-13)
 
 ### Bug Fixes
