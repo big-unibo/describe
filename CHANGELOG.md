@@ -1,3 +1,9 @@
+## [1.0.107](https://github.com/big-unibo/describe/compare/1.0.106...1.0.107) (2025-03-20)
+
+### Bug Fixes
+
+* **deps:** update dependency org.apache.commons:commons-csv to v1.14.0 ([#224](https://github.com/big-unibo/describe/issues/224)) ([61e9b4a](https://github.com/big-unibo/describe/commit/61e9b4af7343926eba4d2417295e04afde0eb2be))
+
 ## [1.0.106](https://github.com/big-unibo/describe/compare/1.0.105...1.0.106) (2025-03-20)
 
 ### Bug Fixes
