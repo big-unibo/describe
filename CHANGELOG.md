@@ -1,3 +1,9 @@
+## [1.0.111](https://github.com/big-unibo/describe/compare/1.0.110...1.0.111) (2025-04-12)
+
+### Bug Fixes
+
+* **deps:** update dependency commons-io:commons-io to v2.19.0 ([#229](https://github.com/big-unibo/describe/issues/229)) ([f524e88](https://github.com/big-unibo/describe/commit/f524e887714335019dfc725d39f2099a7e6a29c1))
+
 ## [1.0.110](https://github.com/big-unibo/describe/compare/1.0.109...1.0.110) (2025-04-09)
 
 ### Bug Fixes
