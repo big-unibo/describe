@@ -3,7 +3,7 @@ services:
 
   # Image of the MySQL database
   mysql:
-    image: mysql:9.2
+    image: mysql:9.3
     hostname: mysql
     container_name: mysql
     environment:
@@ -23,7 +23,7 @@ services:
   mysql-seed:
     hostname: mysql-seed
     container_name: mysql-seed
-    image: mysql:9.2
+    image: mysql:9.3
     depends_on:
       mysql:
         condition: service_healthy
